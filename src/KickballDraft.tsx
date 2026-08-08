@@ -715,7 +715,7 @@ export default function HawaiiGayKickballShell() {
           </div>
 
           <div className="text-center md:text-right">
-            <p className="text-xs">&copy; {new Date().getFullYear()} Hawaiʻi Gay Kickball League. All rights reserved.</p>
+            <p className="text-xs">&copy; 2017 Hawaiʻi Gay Kickball League. All rights reserved.</p>
             <p className="mt-2 text-[10px] text-slate-500">
               Hero photo: Daniel Ramirez via{' '}
               <a
