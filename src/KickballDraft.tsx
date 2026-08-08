@@ -5,6 +5,7 @@ import {
   CalendarDays,
   Camera,
   Clock,
+  Heart,
   Mail,
   MapPin,
   Menu,
@@ -578,6 +579,26 @@ export default function HawaiiGayKickballShell() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Donate */}
+      <section className="border-b border-rose-100 bg-rose-50 px-4 py-10">
+        <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-5 rounded-2xl border border-rose-200 bg-white p-6 text-center shadow-sm sm:flex-row sm:text-left">
+          <div>
+            <h2 className="text-2xl font-extrabold text-slate-900">Support Our League</h2>
+            <p className="mt-1 text-slate-600">Help us keep kickball inclusive, welcoming, and accessible for our community.</p>
+          </div>
+          <a
+            href="https://www.zeffy.com/en-US/donation-form/bc9b737e-c2af-4da4-9c00-a2bd4bb39c0a"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Donate to Hawaiʻi Gay Kickball League"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-rose-600 px-6 py-3 font-extrabold text-white shadow transition hover:bg-rose-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-rose-300"
+          >
+            <Heart className="h-5 w-5" fill="currentColor" aria-hidden="true" />
+            Donate
+          </a>
         </div>
       </section>
 
