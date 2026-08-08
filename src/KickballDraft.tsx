@@ -318,6 +318,30 @@ export default function HawaiiGayKickballShell() {
                   <p className="mt-1 text-lg font-bold">Kickball, connection, and aloha</p>
                 </div>
               </div>
+              <div className="h-px bg-white/10" />
+              <div>
+                <h3 className="mb-4 flex items-center gap-2 text-lg font-black">
+                  <Clock className="h-5 w-5 text-rose-300" /> Weekend Schedule
+                </h3>
+                <dl className="space-y-4 text-sm">
+                  <div>
+                    <dt className="font-bold text-white">Friday, Nov. 13</dt>
+                    <dd className="text-slate-300">Opening Party</dd>
+                  </div>
+                  <div>
+                    <dt className="font-bold text-white">Saturday &amp; Sunday, Nov. 14–15</dt>
+                    <dd className="text-slate-300">Tournament Games</dd>
+                  </div>
+                  <div>
+                    <dt className="font-bold text-white">Sunday, Nov. 15</dt>
+                    <dd className="text-slate-300">Closing Event</dd>
+                  </div>
+                  <div className="rounded-xl bg-white/10 p-4">
+                    <dt className="font-bold uppercase tracking-wider text-amber-300">Host Hotel</dt>
+                    <dd className="mt-1 text-base font-bold text-white">Pacific 19</dd>
+                  </div>
+                </dl>
+              </div>
             </div>
           </div>
         </div>
