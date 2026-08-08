@@ -98,7 +98,7 @@ export default function HawaiiGayKickballShell() {
               <a href="#about" className="hover:text-teal-600 transition">About</a>
               <a href="#board" className="hover:text-teal-600 transition">Board</a>
               <a href="#schedule" className="hover:text-teal-600 transition">Season Schedule</a>
-              <a href="#classic" className="hover:text-teal-600 transition">Aloha Kickball Classic</a>
+              <a href="#classic" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
               <a href="#sponsors" className="hover:text-teal-600 transition">Sponsors</a>
               <a href="#photos" className="hover:text-teal-600 transition">League Photos</a>
               <a href="#contact" className="hover:text-teal-600 transition">Contact</a>
@@ -144,7 +144,7 @@ export default function HawaiiGayKickballShell() {
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-slate-700 font-medium"
             >
-              Aloha Kickball Classic
+              2026 Aloha Kickball Classic
             </a>
             <a
               href="#sponsors"
@@ -251,7 +251,7 @@ export default function HawaiiGayKickballShell() {
 
       </section>
 
-      {/* Aloha Kickball Classic */}
+      {/* 2026 Aloha Kickball Classic */}
       <section id="classic" className="relative overflow-hidden bg-gradient-to-br from-rose-600 via-orange-500 to-amber-400 px-4 py-20 text-white scroll-mt-24">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10" />
         <div className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-fuchsia-700/20" />
@@ -263,7 +263,7 @@ export default function HawaiiGayKickballShell() {
             </span>
             <div>
               <p className="mb-2 text-lg font-bold text-amber-100">Save the date</p>
-              <h2 className="text-4xl font-black leading-tight md:text-6xl">Aloha Kickball Classic</h2>
+              <h2 className="text-4xl font-black leading-tight md:text-6xl">2026 Aloha Kickball Classic</h2>
             </div>
             <p className="max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl">
               Our annual tournament is headed to Kona for a weekend of kickball, community, friendly competition, and island hospitality.
