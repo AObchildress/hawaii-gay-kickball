@@ -184,7 +184,7 @@ export default function HawaiiGayKickballShell() {
             Aloha & Welcome • LGBTQ+ & Allies
           </span>
           <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
-            Kickball, Community & Camaraderie Under the Diamond Head Sun
+            Community & Camaraderie Under the Diamond Head Sun
           </h1>
           <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto font-light">
             Join Hawaiʻi's largest inclusive adult sports league!
