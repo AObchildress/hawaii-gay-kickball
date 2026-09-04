@@ -438,10 +438,10 @@ export default function HawaiiGayKickballShell() {
       <section id="sponsors" className="bg-slate-900 text-white py-20 px-4 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <div className="mx-auto mb-14 max-w-3xl text-center space-y-4">
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">Season 11 Sponsors</span>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">Season 10 Sponsors</span>
             <h2 className="text-3xl md:text-4xl font-extrabold">Mahalo to Our Community Sponsors</h2>
             <p className="text-slate-300 leading-relaxed">
-              The Hawaii Gay Kickball League would like to thank our Season 11 sponsors for their generous support. Your contributions allow us to create a safe, inclusive and enjoyable space for the LGBTQ+ community on Oahu. Mahalo nui!
+              The Hawaii Gay Kickball League would like to thank our Season 10 sponsors for their generous support. Your contributions allow us to create a safe, inclusive and enjoyable space for the LGBTQ+ community on Oahu. Mahalo nui!
             </p>
           </div>
 
