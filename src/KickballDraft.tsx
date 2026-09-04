@@ -57,6 +57,29 @@ const PRESENTING_SPONSORS = [
   { name: 'Eric Martin', image: '/assets/sponsors/eric-martin.png', href: 'https://ericzmartin.com/' },
 ];
 
+const OPEN_COMMITTEES = [
+  {
+    name: 'Social Media & Communications',
+    description: 'Create content, share league news, and celebrate our players, teams, sponsors, and community.',
+  },
+  {
+    name: 'Sponsorships',
+    description: 'Build relationships with supportive businesses and help deliver meaningful sponsor benefits.',
+  },
+  {
+    name: 'Social Events & Special Events',
+    description: 'Plan socials, celebrations, fundraisers, and welcoming events that strengthen our ʻohana.',
+  },
+  {
+    name: 'Community Outreach',
+    description: 'Connect HIGKL with local organizations, service opportunities, and community events.',
+  },
+  {
+    name: 'Tournament',
+    description: 'Help organize tournament registration, schedules, volunteers, fields, awards, and game-day operations.',
+  },
+];
+
 export default function HawaiiGayKickballShell() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -343,6 +366,56 @@ export default function HawaiiGayKickballShell() {
                   </div>
                 </dl>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Committee Volunteers */}
+      <section id="committees" className="bg-white px-4 py-20 scroll-mt-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-teal-600">Get Involved</span>
+            <h2 className="mt-2 text-3xl font-extrabold text-slate-900 md:text-4xl">Join a League Committee</h2>
+            <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-rose-500" />
+            <p className="mt-5 text-lg leading-relaxed text-slate-600">
+              Share your skills, meet more of our ʻohana, and help shape the next season of Hawaiʻi Gay Kickball. We welcome volunteers with any level of experience.
+            </p>
+          </div>
+
+          <div className="mb-8 overflow-hidden rounded-3xl bg-gradient-to-br from-teal-700 to-slate-900 p-8 text-white shadow-xl md:p-10">
+            <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
+              <div>
+                <span className="inline-flex rounded-full bg-amber-400 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-slate-950">
+                  Highest Priority
+                </span>
+                <h3 className="mt-4 text-3xl font-black">Fields &amp; Umpires Committee</h3>
+                <p className="mt-3 max-w-3xl text-lg leading-relaxed text-slate-200">
+                  Help keep league play safe, organized, consistent, and fair by coordinating field needs, monitoring conditions, supporting game-day operations, and recruiting and scheduling umpires.
+                </p>
+              </div>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-rose-500 px-7 py-4 font-extrabold text-white shadow-lg transition hover:-translate-y-1 hover:bg-rose-600"
+              >
+                I Want to Help <ArrowRight className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {OPEN_COMMITTEES.map((committee) => (
+              <article key={committee.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                <h3 className="text-xl font-extrabold text-slate-900">{committee.name}</h3>
+                <p className="mt-3 leading-relaxed text-slate-600">{committee.description}</p>
+              </article>
+            ))}
+            <div className="flex flex-col items-start justify-center rounded-2xl border border-dashed border-teal-300 bg-teal-50 p-6">
+              <p className="font-bold text-teal-900">Not sure where you fit?</p>
+              <p className="mt-2 text-sm leading-relaxed text-teal-800">Tell us what you enjoy doing, and we’ll help you find the right committee.</p>
+              <a href="#contact" className="mt-4 inline-flex items-center gap-2 font-extrabold text-teal-700 hover:text-teal-900">
+                Contact the Board <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
