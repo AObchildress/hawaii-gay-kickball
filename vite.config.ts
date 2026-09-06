@@ -14,6 +14,7 @@ export default defineConfig({
           try {
             const events = await getUpcomingEvents();
             response.setHeader('Content-Type', 'application/json; charset=utf-8');
+            response.setHeader('Cache-Control', 'no-store');
             response.end(JSON.stringify({ events }));
           } catch (error) {
             console.error('Unable to load public calendar', error);

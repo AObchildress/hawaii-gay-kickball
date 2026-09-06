@@ -147,20 +147,41 @@ export default function HawaiiGayKickballShell() {
 
   useEffect(() => {
     const controller = new AbortController();
+    let hasLoadedSuccessfully = false;
 
-    fetch('/api/events', { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error('Unable to load events');
-        return response.json() as Promise<{ events: CalendarEvent[] }>;
-      })
-      .then((data) => setEvents(data.events))
-      .catch((error) => {
-        if (error instanceof DOMException && error.name === 'AbortError') return;
-        setEventsError(true);
-      })
-      .finally(() => setEventsLoading(false));
+    const loadEvents = () => {
+      fetch('/api/events', { signal: controller.signal, cache: 'no-store' })
+        .then((response) => {
+          if (!response.ok) throw new Error('Unable to load events');
+          return response.json() as Promise<{ events: CalendarEvent[] }>;
+        })
+        .then((data) => {
+          hasLoadedSuccessfully = true;
+          setEvents(data.events);
+          setEventsError(false);
+        })
+        .catch((error) => {
+          if (error instanceof DOMException && error.name === 'AbortError') return;
+          if (!hasLoadedSuccessfully) setEventsError(true);
+        })
+        .finally(() => setEventsLoading(false));
+    };
 
-    return () => controller.abort();
+    const refreshWhenVisible = () => {
+      if (document.visibilityState === 'visible') loadEvents();
+    };
+
+    loadEvents();
+    const refreshInterval = window.setInterval(loadEvents, 60_000);
+    window.addEventListener('focus', loadEvents);
+    document.addEventListener('visibilitychange', refreshWhenVisible);
+
+    return () => {
+      controller.abort();
+      window.clearInterval(refreshInterval);
+      window.removeEventListener('focus', loadEvents);
+      document.removeEventListener('visibilitychange', refreshWhenVisible);
+    };
   }, []);
 
   const handleContactSubmit = (event: React.FormEvent<HTMLFormElement>) => {

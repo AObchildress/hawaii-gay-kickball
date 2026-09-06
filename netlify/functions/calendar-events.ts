@@ -9,7 +9,7 @@ export default async () => {
     return new Response(JSON.stringify({ events }), {
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
-        'Cache-Control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=600',
+        'Cache-Control': 'no-store',
       },
     });
   } catch (error) {
