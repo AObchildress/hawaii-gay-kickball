@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "latest",
     "@vitejs/plugin-react": "latest",
     "lucide-react": "latest",
+    "node-ical": "^0.27.1",
     "react": "latest",
     "react-dom": "latest",
     "tailwindcss": "latest",

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ArrowRight,
   Calendar,
@@ -57,6 +57,41 @@ const PRESENTING_SPONSORS = [
   { name: 'Eric Martin', image: '/assets/sponsors/eric-martin.png', href: 'https://ericzmartin.com/' },
 ];
 
+type CalendarEvent = {
+  id: string;
+  title: string;
+  start: string;
+  end: string;
+  allDay: boolean;
+  location?: string;
+  url?: string;
+};
+
+const HAWAII_TIME_ZONE = 'Pacific/Honolulu';
+
+function eventDateParts(event: CalendarEvent) {
+  const date = new Date(event.start);
+  const timeZone = event.allDay ? 'UTC' : HAWAII_TIME_ZONE;
+
+  return {
+    month: new Intl.DateTimeFormat('en-US', { month: 'short', timeZone }).format(date).toUpperCase(),
+    day: new Intl.DateTimeFormat('en-US', { day: 'numeric', timeZone }).format(date),
+    weekday: new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone }).format(date),
+  };
+}
+
+function eventTime(event: CalendarEvent) {
+  if (event.allDay) return 'All day';
+
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: HAWAII_TIME_ZONE,
+  });
+
+  return `${formatter.format(new Date(event.start))}–${formatter.format(new Date(event.end))}`;
+}
+
 const OPEN_COMMITTEES = [
   {
     name: 'Social Media & Communications',
@@ -82,6 +117,28 @@ const OPEN_COMMITTEES = [
 
 export default function HawaiiGayKickballShell() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [events, setEvents] = useState<CalendarEvent[]>([]);
+  const [eventsLoading, setEventsLoading] = useState(true);
+  const [eventsError, setEventsError] = useState(false);
+  const [showAllEvents, setShowAllEvents] = useState(false);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch('/api/events', { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error('Unable to load events');
+        return response.json() as Promise<{ events: CalendarEvent[] }>;
+      })
+      .then((data) => setEvents(data.events))
+      .catch((error) => {
+        if (error instanceof DOMException && error.name === 'AbortError') return;
+        setEventsError(true);
+      })
+      .finally(() => setEventsLoading(false));
+
+    return () => controller.abort();
+  }, []);
 
   const handleContactSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -120,7 +177,7 @@ export default function HawaiiGayKickballShell() {
             <div className="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
               <a href="#about" className="hover:text-teal-600 transition">About</a>
               <a href="#board" className="hover:text-teal-600 transition">Board</a>
-              <a href="#schedule" className="hover:text-teal-600 transition">Season Schedule</a>
+              <a href="#events" className="hover:text-teal-600 transition">Upcoming Events</a>
               <a href="#classic" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
               <a href="#sponsors" className="hover:text-teal-600 transition">Sponsors</a>
               <a href="#photos" className="hover:text-teal-600 transition">League Photos</a>
@@ -156,11 +213,11 @@ export default function HawaiiGayKickballShell() {
               Board of Directors
             </a>
             <a
-              href="#schedule"
+              href="#events"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-slate-700 font-medium"
             >
-              Season Schedule
+              Upcoming Events
             </a>
             <a
               href="#classic"
@@ -207,17 +264,17 @@ export default function HawaiiGayKickballShell() {
             Aloha & Welcome • LGBTQ+ & Allies
           </span>
           <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
-            Community & Camaraderie Under the Diamond Head Sun
+            Pride • Play • ʻOhana
           </h1>
           <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto font-light">
             Join Hawaiʻi's largest inclusive adult sports league!
           </p>
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="#schedule"
+              href="#events"
               className="bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2"
             >
-              <Calendar className="w-5 h-5" /> View Season 11 Schedule
+              <Calendar className="w-5 h-5" /> View Upcoming Events
             </a>
             <a
               href="#about"
@@ -418,6 +475,82 @@ export default function HawaiiGayKickballShell() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Upcoming Events */}
+      <section id="events" className="border-y border-slate-200 bg-slate-100 px-4 py-20 scroll-mt-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-teal-600">League Calendar</span>
+            <h2 className="mt-2 text-3xl font-extrabold text-slate-900 md:text-4xl">Upcoming Events</h2>
+            <p className="mt-3 text-lg text-slate-600">
+              Stay up to date with upcoming games, socials, clinics, tournaments, and community events.
+            </p>
+          </div>
+
+          {eventsLoading ? (
+            <div className="grid gap-5 md:grid-cols-2" aria-label="Loading upcoming events">
+              {[0, 1, 2, 3].map((item) => (
+                <div key={item} className="h-36 animate-pulse rounded-2xl border border-slate-200 bg-white shadow-sm" />
+              ))}
+            </div>
+          ) : eventsError ? (
+            <div className="rounded-3xl border border-rose-200 bg-white px-6 py-12 text-center shadow-sm">
+              <CalendarDays className="mx-auto h-10 w-10 text-rose-500" />
+              <h3 className="mt-4 text-xl font-extrabold text-slate-900">The calendar is taking a timeout.</h3>
+              <p className="mt-2 text-slate-600">Please open the public calendar to see the latest league events.</p>
+            </div>
+          ) : events.length === 0 ? (
+            <div className="rounded-3xl border border-slate-200 bg-white px-6 py-12 text-center shadow-sm">
+              <CalendarDays className="mx-auto h-10 w-10 text-teal-600" />
+              <h3 className="mt-4 text-xl font-extrabold text-slate-900">More events are coming soon.</h3>
+              <p className="mt-2 text-slate-600">No upcoming events are posted yet. Check back soon for league updates.</p>
+            </div>
+          ) : (
+            <>
+              <div className="grid gap-5 md:grid-cols-2">
+                {events.slice(0, showAllEvents ? events.length : 6).map((event) => {
+                  const date = eventDateParts(event);
+                  const content = (
+                    <>
+                      <div className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl bg-rose-500 text-white shadow-sm">
+                        <span className="text-xs font-black tracking-widest">{date.month}</span>
+                        <span className="text-3xl font-black leading-none">{date.day}</span>
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold text-teal-700">{date.weekday}</p>
+                        <h3 className="mt-1 text-xl font-extrabold text-slate-900">{event.title}</h3>
+                        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
+                          <span className="inline-flex items-center gap-2"><Clock className="h-4 w-4 text-rose-500" />{eventTime(event)}</span>
+                          {event.location && <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4 text-rose-500" />{event.location}</span>}
+                        </div>
+                      </div>
+                    </>
+                  );
+
+                  return event.url ? (
+                    <a key={event.id} href={event.url} target="_blank" rel="noopener noreferrer" className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-teal-300 hover:shadow-lg">
+                      {content}
+                    </a>
+                  ) : (
+                    <article key={event.id} className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                      {content}
+                    </article>
+                  );
+                })}
+              </div>
+
+              {events.length > 6 && (
+                <div className="mt-8 text-center">
+                  <button type="button" onClick={() => setShowAllEvents((value) => !value)} className="rounded-xl bg-teal-600 px-7 py-3 font-extrabold text-white shadow-sm transition hover:bg-teal-700">
+                    {showAllEvents ? 'Show Fewer Events' : 'Show More Events'}
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+
         </div>
       </section>
 
