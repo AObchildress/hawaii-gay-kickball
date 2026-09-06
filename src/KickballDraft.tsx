@@ -70,18 +70,41 @@ type CalendarEvent = {
 const HAWAII_TIME_ZONE = 'Pacific/Honolulu';
 
 function eventDateParts(event: CalendarEvent) {
-  const date = new Date(event.start);
-  const timeZone = event.allDay ? 'UTC' : HAWAII_TIME_ZONE;
+  const timeZone = HAWAII_TIME_ZONE;
+  const start = new Date(event.start);
+  // Google Calendar stores an all-day event's end as the following midnight.
+  const end = event.allDay ? new Date(new Date(event.end).getTime() - 1) : new Date(event.end);
+  const shortMonth = (date: Date) => new Intl.DateTimeFormat('en-US', { month: 'short', timeZone }).format(date);
+  const day = (date: Date) => new Intl.DateTimeFormat('en-US', { day: 'numeric', timeZone }).format(date);
+  const weekday = (date: Date) => new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone }).format(date);
+  const dateKey = (date: Date) => new Intl.DateTimeFormat('en-CA', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    timeZone,
+  }).format(date);
+
+  const sameDay = dateKey(start) === dateKey(end);
+  const sameMonth = shortMonth(start) === shortMonth(end);
+  const startMonth = shortMonth(start);
+  const endMonth = shortMonth(end);
+  const startDay = day(start);
+  const endDay = day(end);
 
   return {
-    month: new Intl.DateTimeFormat('en-US', { month: 'short', timeZone }).format(date).toUpperCase(),
-    day: new Intl.DateTimeFormat('en-US', { day: 'numeric', timeZone }).format(date),
-    weekday: new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone }).format(date),
+    month: (sameMonth ? startMonth : `${startMonth}/${endMonth}`).toUpperCase(),
+    day: sameDay ? startDay : `${startDay}–${endDay}`,
+    label: sameDay
+      ? weekday(start)
+      : `${weekday(start)}, ${startMonth} ${startDay} – ${weekday(end)}, ${endMonth} ${endDay}`,
   };
 }
 
 function eventTime(event: CalendarEvent) {
-  if (event.allDay) return 'All day';
+  if (event.allDay) {
+    const days = Math.max(1, Math.round((new Date(event.end).getTime() - new Date(event.start).getTime()) / 86_400_000));
+    return days > 1 ? `All day • ${days}-day event` : 'All day';
+  }
 
   const formatter = new Intl.DateTimeFormat('en-US', {
     hour: 'numeric',
@@ -514,12 +537,14 @@ export default function HawaiiGayKickballShell() {
                   const date = eventDateParts(event);
                   const content = (
                     <>
-                      <div className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl bg-rose-500 text-white shadow-sm">
-                        <span className="text-xs font-black tracking-widest">{date.month}</span>
-                        <span className="text-3xl font-black leading-none">{date.day}</span>
+                      <div className="flex h-20 w-20 shrink-0 flex-col items-center justify-center gap-1 rounded-2xl bg-rose-500 px-1 text-center text-white shadow-sm">
+                        <span className="w-full text-xs font-black leading-none tracking-widest">{date.month}</span>
+                        <span className={`${date.day.includes('–') ? 'text-2xl' : 'text-3xl'} w-full font-black leading-none tracking-tight tabular-nums`}>
+                          {date.day}
+                        </span>
                       </div>
                       <div className="min-w-0">
-                        <p className="text-sm font-bold text-teal-700">{date.weekday}</p>
+                        <p className="text-sm font-bold text-teal-700">{date.label}</p>
                         <h3 className="mt-1 text-xl font-extrabold text-slate-900">{event.title}</h3>
                         <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600">
                           <span className="inline-flex items-center gap-2"><Clock className="h-4 w-4 text-rose-500" />{eventTime(event)}</span>
