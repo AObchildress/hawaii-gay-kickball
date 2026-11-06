@@ -378,7 +378,7 @@ export default function HawaiiGayKickballShell() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Our Mission</h2>
           <div className="w-20 h-1 bg-teal-500 mx-auto rounded-full" />
           <p className="text-lg text-slate-600 pt-2">
-            The Hawaii Gay Kickball league is a co-ed community minded group that strives to provide an inclusive, safe, and enjoyable atmosphere for the lesbian, gay, bisexual, transgender, queer and the LGBTQI-friendly community. Our kickball league fosters sportsmanship, friendly competition and community building through the sport of kickball.
+            The Hawaiʻi Gay Kickball league is a co-ed community minded group that strives to provide an inclusive, safe, and enjoyable atmosphere for the lesbian, gay, bisexual, transgender, queer and the LGBTQI-friendly community. Our kickball league fosters sportsmanship, friendly competition and community building through the sport of kickball.
           </p>
         </div>
 
@@ -700,7 +700,7 @@ export default function HawaiiGayKickballShell() {
             <span className="text-sm font-bold uppercase tracking-[0.2em] text-amber-400">2026 Sponsors</span>
             <h2 className="text-3xl md:text-4xl font-extrabold">Mahalo to Our Community Sponsors</h2>
             <p className="text-slate-300 leading-relaxed">
-              The Hawaii Gay Kickball League would like to thank our 2026 sponsors for their generous support. Your contributions allow us to create a safe, inclusive and enjoyable space for the LGBTQ+ community on Oahu. Mahalo nui!
+              The Hawaiʻi Gay Kickball League would like to thank our 2026 sponsors for their generous support. Your contributions allow us to create a safe, inclusive and enjoyable space for the LGBTQ+ community on Oahu. Mahalo nui!
             </p>
           </div>
 
@@ -780,7 +780,7 @@ export default function HawaiiGayKickballShell() {
               <p className="mt-3 text-xl font-bold text-violet-700">by Eric Z-Martin Photography</p>
             </div>
             <p className="text-lg leading-relaxed text-slate-600">
-              Relive the action, team spirit, and community moments from Hawaii Gay Kickball League events in our official photo galleries.
+              Relive the action, team spirit, and community moments from Hawaiʻi Gay Kickball League events in our official photo galleries.
             </p>
             <a
               href="https://ericzmartin.smugmug.com/"
@@ -796,7 +796,7 @@ export default function HawaiiGayKickballShell() {
             href="https://ericzmartin.smugmug.com/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="View Hawaii Gay Kickball League galleries by Eric Z-Martin Photography"
+            aria-label="View Hawaiʻi Gay Kickball League galleries by Eric Z-Martin Photography"
             className="flex min-h-72 items-center justify-center rounded-2xl border border-slate-200 bg-white p-10 shadow-inner transition hover:-translate-y-1 hover:shadow-lg"
           >
             <img
@@ -957,7 +957,7 @@ export default function HawaiiGayKickballShell() {
               href="https://www.facebook.com/groups/hawaiigaykickballleague"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Hawaii Gay Kickball League on Facebook"
+              aria-label="Hawaiʻi Gay Kickball League on Facebook"
               className="hover:text-white transition"
             >
               <FacebookIcon className="w-6 h-6" />
@@ -966,7 +966,7 @@ export default function HawaiiGayKickballShell() {
               href="https://www.instagram.com/hawaiigaykickball/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Hawaii Gay Kickball League on Instagram"
+              aria-label="Hawaiʻi Gay Kickball League on Instagram"
               className="hover:text-white transition"
             >
               <InstagramIcon className="w-6 h-6" />
