@@ -201,7 +201,7 @@ export default function HawaiiGayKickballShell() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 font-sans antialiased scroll-smooth">
+    <div className="island-site min-h-screen bg-slate-50 text-slate-800 font-sans antialiased scroll-smooth">
       {/* Top Rainbow Accent Bar */}
       <div className="h-2 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500" />
 
@@ -308,7 +308,7 @@ export default function HawaiiGayKickballShell() {
       <section
         className="relative text-white py-24 md:py-36 px-4 bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(15, 23, 42, 0.78) 0%, rgba(13, 148, 136, 0.58) 100%), url('/assets/diamond-head-from-kapiolani-park.jpg')`,
+          backgroundImage: `linear-gradient(135deg, rgba(7, 63, 91, 0.78) 0%, rgba(6, 108, 105, 0.64) 55%, rgba(131, 49, 92, 0.60) 100%), url('/assets/diamond-head-from-kapiolani-park.jpg')`,
           backgroundPosition: 'center 68%',
         }}
       >
@@ -340,7 +340,7 @@ export default function HawaiiGayKickballShell() {
       </section>
 
       {/* Quick Info Bar */}
-      <section className="bg-slate-900 text-white py-8 border-b border-slate-800">
+      <section className="island-info bg-slate-900 text-white py-8 border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div className="p-4 flex items-center justify-center gap-4">
             <div className="p-3 bg-teal-500/20 text-teal-400 rounded-lg">
@@ -435,32 +435,56 @@ export default function HawaiiGayKickballShell() {
                 </div>
               </div>
               <div className="h-px bg-white/10" />
-              <div>
-                <h3 className="mb-4 flex items-center gap-2 text-lg font-black">
-                  <Clock className="h-5 w-5 text-rose-300" /> Weekend Schedule
-                </h3>
-                <dl className="space-y-4 text-sm">
-                  <div>
-                    <dt className="font-bold text-white">Friday, Nov. 13</dt>
-                    <dd className="text-slate-300">Opening Party</dd>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-white">Saturday &amp; Sunday, Nov. 14–15</dt>
-                    <dd className="text-slate-300">Tournament Games</dd>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-white">Sunday, Nov. 15</dt>
-                    <dd className="text-slate-300">Closing Event</dd>
-                  </div>
+              <dl>
                   <div className="rounded-xl bg-white/10 p-4">
                     <dt className="font-bold uppercase tracking-wider text-amber-300">Host Hotel</dt>
                     <dd className="mt-1 text-base font-bold text-white">Pacific 19</dd>
                   </div>
-                </dl>
-              </div>
+              </dl>
             </div>
           </div>
         </div>
+        <section aria-labelledby="weekend-schedule-title" className="relative mx-auto mt-8 max-w-7xl rounded-3xl border border-white/30 bg-slate-950/85 p-6 shadow-xl md:p-8">
+                <h3 id="weekend-schedule-title" className="mb-3 flex items-center gap-2 text-2xl font-black">
+                  <Clock className="h-5 w-5 text-rose-300" /> Weekend Schedule
+                </h3>
+                <p className="mb-4 text-sm text-slate-300">November 13–15, 2026 · All times HST</p>
+                <dl className="grid gap-6 text-sm md:grid-cols-3">
+                  {[
+                    { day: 'Friday, Nov. 13', events: [
+                      { time: '5–7 PM', name: 'Captains Meeting & Registration', detail: 'Puna Chocolate Company' },
+                      { time: '8–11 PM', name: 'Tournament Kickoff', detail: 'MyBar · Theme: HIGKL Airlines' },
+                    ] },
+                    { day: 'Saturday, Nov. 14', events: [
+                      { time: '8:30 AM', name: 'Opening Ceremony' },
+                      { time: '9 AM–3 PM', name: 'Round Robin Games' },
+                      { time: '12 PM', name: 'Lunch on the Fields' },
+                      { time: '4–8 PM', name: 'Splash Landing Pool Party', detail: 'Pacific 19' },
+                    ] },
+                    { day: 'Sunday, Nov. 15', events: [
+                      { time: '9 AM–2 PM', name: 'Elimination Games' },
+                      { time: '12 PM', name: 'Lunch on the Fields' },
+                      { time: 'After the games', name: 'Closing Ceremony & Awards' },
+                      { time: '6–9 PM', name: 'Final Boarding Call Closing Party', detail: 'MyBar' },
+                    ] },
+                  ].map(({ day, events }) => (
+                    <div key={day} className="border-t border-white/15 pt-4">
+                      <dt className="mb-3 font-bold text-amber-300">{day}</dt>
+                      <dd>
+                        <ul className="space-y-3">
+                          {events.map((event) => (
+                            <li key={event.name}>
+                              <span className="block text-xs font-bold uppercase tracking-wide text-teal-300">{event.time}</span>
+                              <span className="mt-0.5 block font-semibold text-white">{event.name}</span>
+                              {event.detail && <span className="block text-slate-300">{event.detail}</span>}
+                            </li>
+                          ))}
+                        </ul>
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+        </section>
         <TournamentSchedule />
       </section>
 
@@ -474,7 +498,7 @@ export default function HawaiiGayKickballShell() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Key Season Dates */}
-            <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm">
+            <div className="season-dates bg-white p-6 md:p-8 rounded-2xl shadow-sm">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
                 <CalendarDays className="text-teal-600" /> Key Season Dates
               </h3>
@@ -507,7 +531,7 @@ export default function HawaiiGayKickballShell() {
             </div>
 
             {/* Spirit Themes */}
-            <div className="bg-gradient-to-br from-teal-700 to-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-md">
+            <div className="spirit-card bg-gradient-to-br from-teal-700 to-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-md">
               <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
                 <Shirt className="text-rose-400" /> Spirit & Dress Themes
               </h3>

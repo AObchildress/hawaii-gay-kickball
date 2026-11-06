@@ -14,3 +14,84 @@ input,
 textarea {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Ocean, hibiscus, sunshine, and tropical foliage. */
+.island-site {
+  background: #fffbf3;
+}
+
+.island-site nav {
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #e44b73, #f6ba43, #22a884, #159dc4, #9960bd) 1;
+}
+
+.island-site .island-info {
+  background: linear-gradient(110deg, #075b76, #087c77 55%, #236d52);
+  border-color: #0f887e;
+}
+
+.island-info .text-slate-400 {
+  color: #e0f2f1;
+}
+
+.island-site #schedule {
+  background: radial-gradient(ellipse at top left, #bdf0e8, transparent 60%),
+    radial-gradient(ellipse at bottom right, #ffdfcb, transparent 65%), #fff9e9;
+  border-color: #b9e5d9;
+}
+
+.season-dates {
+  border-top: 5px solid #149c91;
+  box-shadow: 0 12px 32px #07665d12;
+}
+
+.season-dates li {
+  border-left: 4px solid var(--date-accent);
+  background: var(--date-tint);
+}
+
+.season-dates li:nth-child(6n + 1) { --date-accent: #c84b69; --date-tint: #fff1f3; --date-ink: #99314c; }
+.season-dates li:nth-child(6n + 2) { --date-accent: #089b92; --date-tint: #edfafa; --date-ink: #076960; }
+.season-dates li:nth-child(6n + 3) { --date-accent: #9e62b6; --date-tint: #faf1ff; --date-ink: #78408f; }
+.season-dates li:nth-child(6n + 4) { --date-accent: #3290be; --date-tint: #eef8ff; --date-ink: #1b6590; }
+.season-dates li:nth-child(6n + 5) { --date-accent: #d59322; --date-tint: #fff8e7; --date-ink: #875b09; }
+.season-dates li:nth-child(6n + 6) { --date-accent: #4d9c65; --date-tint: #f0f9ee; --date-ink: #326e44; }
+
+.season-dates li .bg-teal-100 {
+  background: white;
+  color: var(--date-ink);
+  border: 1px solid color-mix(in srgb, var(--date-accent) 25%, transparent);
+}
+
+.island-site .spirit-card {
+  background: linear-gradient(145deg, #087d80, #12648c 55%, #6c438e);
+}
+
+.spirit-card .text-slate-300 { color: #edf5ff; }
+
+.island-site #committees {
+  background: linear-gradient(145deg, #fffaf2, #fff 55%, #fdf0f3);
+}
+
+.island-site #committees article { border-top: 4px solid #e36b85; }
+.island-site #committees article:nth-child(3n + 2) { border-top-color: #e5b34d; }
+.island-site #committees article:nth-child(3n) { border-top-color: #29a69c; }
+
+.island-site #events {
+  background: linear-gradient(130deg, #e9f7ff, #edfaf5 65%, #fff8e8);
+  border-color: #c5e8ed;
+}
+
+.island-site #sponsors {
+  background: linear-gradient(125deg, #103951, #124e50 60%, #3c315f);
+}
+
+.island-site #board {
+  background: linear-gradient(130deg, #fff6e6, #fff 55%, #fceef5);
+  border-color: #f0dfc9;
+}
+
+.island-site footer {
+  background: linear-gradient(110deg, #092d42, #124b48);
+  border-top: 4px solid #e8af49;
+}
