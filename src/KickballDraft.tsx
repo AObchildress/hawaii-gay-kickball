@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import TournamentSchedule from './TournamentSchedule';
 import {
   ArrowRight,
   Calendar,
@@ -460,6 +461,7 @@ export default function HawaiiGayKickballShell() {
             </div>
           </div>
         </div>
+        <TournamentSchedule />
       </section>
 
       {/* Schedule / Weekly Themes Section */}
@@ -476,15 +478,11 @@ export default function HawaiiGayKickballShell() {
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
                 <CalendarDays className="text-teal-600" /> Key Season Dates
               </h3>
-              <p className="mb-4 text-sm text-slate-600">2026–2027 season · All times Hawaiʻi Standard Time (HST).</p>
+              <p className="mb-4 text-sm text-slate-600">All times Hawaiʻi Standard Time (HST).</p>
               <ul className="space-y-3">
                 {[
                   { title: 'Registration', date: 'Nov. 15–Dec. 31, 2026', detail: 'Opens November 15 at 5:00 PM; runs through December 31.' },
-                  { title: 'Clinic 1', date: 'Dec. 5, 2026', detail: '9:00 AM–12:00 PM · Softball Fields 2 & 3' },
-                  { title: 'Clinic 2', date: 'Jan. 9, 2027', detail: '9:00 AM–12:00 PM · Softball Fields 2 & 3' },
-                  { title: 'Clinic 3', date: 'Jan. 16, 2027', detail: '9:00 AM–12:00 PM · Softball Fields 2 & 3' },
-                  { title: 'Clinic 4', date: 'Jan. 23, 2027', detail: '9:00 AM–12:00 PM · Softball Fields 2 & 3' },
-                  { title: 'Clinic 5', date: 'Jan. 30, 2027', detail: '9:00 AM–12:00 PM · Softball Fields 2 & 3' },
+                  { title: 'Clinics', dates: ['Dec. 5, 2026', 'Jan. 9, 2027', 'Jan. 16, 2027', 'Jan. 23, 2027', 'Jan. 30, 2027'], detail: 'All clinics: 9:00 AM–12:00 PM · Softball Fields 2 & 3' },
                   { title: 'Season 11 Opening Party', date: 'Feb. 6, 2027' },
                   { title: 'Regular Season Games', date: 'Feb. 20–Apr. 10, 2027' },
                   { title: 'Playoffs', date: 'Apr. 17, 2027' },
@@ -494,9 +492,13 @@ export default function HawaiiGayKickballShell() {
                     key={item.title}
                     className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3"
                   >
-                    <div className="flex flex-col items-start justify-between gap-2 lg:flex-row">
+                    <div className={`flex flex-col items-start justify-between gap-2 ${item.dates ? '' : 'lg:flex-row'}`}>
                       <span className="font-semibold text-slate-800">{item.title}</span>
-                      <span className="rounded-xl bg-teal-100 px-3 py-1 text-sm font-bold text-teal-800 lg:text-right">{item.date}</span>
+                      <div className="flex flex-wrap gap-2">
+                        {(item.dates ?? [item.date]).map((date) => (
+                          <span key={date} className="rounded-xl bg-teal-100 px-3 py-1 text-sm font-bold text-teal-800 lg:text-right">{date}</span>
+                        ))}
+                      </div>
                     </div>
                     {item.detail && <p className="mt-2 text-sm text-slate-600">{item.detail}</p>}
                   </li>
