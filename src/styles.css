@@ -97,8 +97,8 @@ textarea {
 }
 
 .sponsorship-feature {
-  background: radial-gradient(ellipse at top right, #9a558b66, transparent 60%),
-    linear-gradient(120deg, #075c64, #164d75 60%, #513675);
+  background: radial-gradient(ellipse at top right, #f1a44844, transparent 60%),
+    linear-gradient(120deg, #973747, #a23e36 60%, #833f29);
   border-top: 5px solid #f5c74e;
-  box-shadow: 0 16px 40px #154b6930;
+  box-shadow: 0 16px 40px #823c3830;
 }
