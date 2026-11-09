@@ -95,3 +95,10 @@ textarea {
   background: linear-gradient(110deg, #092d42, #124b48);
   border-top: 4px solid #e8af49;
 }
+
+.sponsorship-feature {
+  background: radial-gradient(ellipse at top right, #9a558b66, transparent 60%),
+    linear-gradient(120deg, #075c64, #164d75 60%, #513675);
+  border-top: 5px solid #f5c74e;
+  box-shadow: 0 16px 40px #154b6930;
+}

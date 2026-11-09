@@ -219,12 +219,13 @@ export default function HawaiiGayKickballShell() {
             </a>
 
             {/* Desktop Nav Links */}
-            <div className="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+            <div className="hidden xl:flex items-center gap-4 text-sm font-medium text-slate-600">
               <a href="#about" className="hover:text-teal-600 transition">About</a>
               <a href="#board" className="hover:text-teal-600 transition">Board</a>
               <a href="#events" className="hover:text-teal-600 transition">Upcoming Events</a>
               <a href="#classic" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
               <a href="#schedule" className="hover:text-teal-600 transition">Season 11</a>
+              <a href="#season-11-sponsorship" className="whitespace-nowrap rounded-full bg-amber-300 px-4 py-2 font-bold text-slate-900 transition hover:bg-amber-200">Sponsor Season 11</a>
               <a href="#sponsors" className="hover:text-teal-600 transition">Sponsors</a>
               <a href="#photos" className="hover:text-teal-600 transition">League Photos</a>
               <a href="#contact" className="hover:text-teal-600 transition">Contact</a>
@@ -233,7 +234,7 @@ export default function HawaiiGayKickballShell() {
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-slate-700 hover:text-teal-600 focus:outline-none"
+              className="xl:hidden text-slate-700 hover:text-teal-600 focus:outline-none"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -243,7 +244,7 @@ export default function HawaiiGayKickballShell() {
 
         {/* Mobile Nav Dropdown */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+          <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
             <a
               href="#about"
               onClick={() => setMobileMenuOpen(false)}
@@ -278,6 +279,13 @@ export default function HawaiiGayKickballShell() {
               className="block py-2 text-slate-700 font-medium"
             >
               Season 11
+            </a>
+            <a
+              href="#season-11-sponsorship"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block rounded-xl bg-amber-100 px-4 py-3 font-bold text-teal-900"
+            >
+              Sponsor Season 11
             </a>
             <a
               href="#sponsors"
@@ -544,6 +552,27 @@ export default function HawaiiGayKickballShell() {
               </div>
             </div>
           </div>
+
+          <section id="season-11-sponsorship" aria-labelledby="season-11-sponsorship-title" className="mt-8 scroll-mt-28 sponsorship-feature rounded-3xl border border-white/40 p-6 text-white shadow-xl md:p-10">
+            <span className="inline-flex rounded-full bg-amber-300 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-slate-900">Community Partnerships</span>
+            <h3 id="season-11-sponsorship-title" className="mt-4 text-3xl font-extrabold text-white md:text-4xl">Sponsor Season 11</h3>
+            <div className="mt-4 max-w-4xl space-y-4 leading-relaxed text-white/95">
+              <p>Support Hawaiʻi’s largest LGBTQ+ and Ally sports league and connect your business with 500 players across 24 teams. Top-tier sponsorships include your logo on our jerseys and access to VeraTaps, a digital wallet-pass marketing tool for connecting with customers and tracking engagement.</p>
+              <p>Jersey-logo sponsorships close December 31, 2026; entry-level sponsorships without jersey logos are available through January 31, 2027.</p>
+              <p>Explore the packages below and contact our Sponsorship Committee to find the right fit.</p>
+            </div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <a href="/documents/higkl-season-11-sponsorship-package.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl bg-amber-300 px-5 py-4 font-bold text-slate-900 transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">
+                <span>Season 11 Sponsorship Package <span className="block text-sm font-normal text-slate-700">View PDF · 3.3 MB · Opens in a new tab</span></span>
+                <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
+              </a>
+              <a href="/documents/verataps-higkl-season-11-info.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl border border-white/40 bg-white px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">
+                <span>VeraTaps Marketing Information <span className="block text-sm font-normal text-violet-800">View PDF · 16.8 MB · Opens in a new tab</span></span>
+                <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
+              </a>
+            </div>
+            <a href="mailto:brandon@hawaiigaykickball.com,kanoa@hawaiigaykickball.com,eric@hawaiigaykickball.com?subject=Season%2011%20Sponsorship" className="mt-6 inline-flex items-center gap-2 font-bold text-white underline underline-offset-4 hover:text-amber-200">Contact the Sponsorship Committee <Mail className="h-4 w-4" aria-hidden="true" /></a>
+          </section>
         </div>
       </section>
 
