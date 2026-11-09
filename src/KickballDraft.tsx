@@ -567,7 +567,7 @@ export default function HawaiiGayKickballShell() {
                 <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
               </a>
               <a href="/documents/verataps-higkl-season-11-info.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl border border-white/40 bg-white px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">
-                <span>VeraTaps Marketing Information <span className="block text-sm font-normal text-violet-800">View PDF · 16.8 MB · Opens in a new tab</span></span>
+                <span>VeraTaps Marketing Information <span className="block text-sm font-normal text-violet-800">View PDF · 4.1 MB · Opens in a new tab</span></span>
                 <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
               </a>
             </div>
