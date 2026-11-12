@@ -1,4 +1,5 @@
 import schedule from './tournament-schedule.json';
+import { BookOpen, ArrowUpRight } from 'lucide-react';
 
 const divisions = [
   { name: 'Competitive', games: schedule.competitive, href: 'https://teamsideline.com/sites/aikaneohana/schedule/741915/Competitive' },
@@ -10,6 +11,19 @@ export default function TournamentSchedule() {
     <div className="relative mx-auto mt-8 max-w-7xl border-t border-white/30 pt-6">
       <h3 className="text-3xl font-extrabold">Game Schedule</h3>
       <p className="mt-2 text-sm text-white/90">All times Hawaiʻi Standard Time (HST). Schedules are subject to change; check TeamSideline for the latest updates.</p>
+      <a
+        href="/documents/2026-aloha-classic-tournament-rulebook.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 flex max-w-xl items-center gap-4 rounded-2xl border border-white/30 bg-slate-950/85 p-4 text-white shadow-md transition hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+      >
+        <span className="rounded-xl bg-amber-300/15 p-3 text-amber-300"><BookOpen className="h-6 w-6" aria-hidden="true" /></span>
+        <span className="flex-1">
+          <span className="block text-lg font-bold">Tournament Rulebook</span>
+          <span className="mt-1 block text-sm text-slate-300">2026 Aloha Classic · View PDF in a new tab</span>
+        </span>
+        <ArrowUpRight className="h-5 w-5 shrink-0 text-amber-300" aria-hidden="true" />
+      </a>
       <div className="mt-4 grid items-start gap-4 lg:grid-cols-2">
         {[
           { title: 'Saturday Pool Play', date: 'November 14, 2026', index: 0 },
