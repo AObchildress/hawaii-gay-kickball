@@ -504,6 +504,16 @@ export default function HawaiiGayKickballShell() {
             <p className="text-slate-600 mt-2">Check back here for weekly spirit themes, key dates, and game day schedules.</p>
           </div>
 
+          <section aria-labelledby="season-11-registration-title" className="mb-8 rounded-2xl border border-teal-200 border-t-4 border-t-teal-500 bg-white p-6 shadow-sm md:p-8">
+            <h3 id="season-11-registration-title" className="flex items-center gap-3 text-2xl font-bold text-slate-900"><Users className="h-6 w-6 text-teal-600" aria-hidden="true" /> Season 11 Registration</h3>
+            <p className="mt-3 text-slate-600">Registration opens November 15, 2026 at 5 PM HST and runs through December 31, 2026.</p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <a href="https://teamsideline.com/sites/aikaneohana/program/122491/Hawaii-Gay-Kickball-Season-11" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-4 font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">Captains Registration <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
+              <a href="https://forms.gle/ukNa2nyNZyF4WhXT7" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">Free Agent Form <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
+            </div>
+            <p className="mt-3 text-xs text-slate-500">Both links open in a new tab.</p>
+          </section>
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Key Season Dates */}
             <div className="season-dates bg-white p-6 md:p-8 rounded-2xl shadow-sm">
