@@ -3,65 +3,72 @@
     [
       [
         "Sat 11/14",
-        "9:00 AM",
+        "9:45 AM",
         "Spread Eagles",
         "Dirty Bases",
         "Kona Field 1"
       ],
       [
         "Sat 11/14",
-        "9:00 AM",
+        "9:45 AM",
         "Salty Gulps",
         "Slutty Innings",
         "Kona Field 2"
       ],
       [
         "Sat 11/14",
-        "10:00 AM",
-        "Dirty Bases",
-        "I Love DP",
-        "Kona Field 1"
-      ],
-      [
-        "Sat 11/14",
-        "11:00 AM",
-        "Spread Eagles",
-        "Slutty Innings",
-        "Kona Field 1"
-      ],
-      [
-        "Sat 11/14",
-        "12:00 PM",
+        "10:45 AM",
         "I Love DP",
         "Salty Gulps",
         "Kona Field 1"
       ],
       [
         "Sat 11/14",
-        "1:00 PM",
-        "Spread Eagles",
-        "Salty Gulps",
+        "11:45 AM",
+        "Dirty Bases",
+        "Slutty Innings",
         "Kona Field 1"
       ],
       [
         "Sat 11/14",
-        "1:00 PM",
-        "Slutty Innings",
-        "Dirty Bases",
+        "11:45 AM",
+        "Yoshi Krazy",
+        "Spread Eagles",
         "Kona Field 2"
       ],
       [
         "Sat 11/14",
-        "2:00 PM",
-        "Spread Eagles",
+        "12:45 PM",
+        "Dirty Bases",
         "I Love DP",
+        "Kona Field 2"
+      ],
+      [
+        "Sat 11/14",
+        "1:45 PM",
+        "Yoshi Krazy",
+        "Slutty Innings",
+        "Kona Field 1"
+      ],
+      [
+        "Sat 11/14",
+        "1:45 PM",
+        "Salty Gulps",
+        "Spread Eagles",
+        "Kona Field 2"
+      ],
+      [
+        "Sat 11/14",
+        "2:45 PM",
+        "I Love DP",
+        "Yoshi Krazy",
         "Kona Field 1"
       ]
     ],
     [
       [
         "Sun 11/15",
-        "9:00 AM",
+        "10:00 AM",
         "G1",
         "4th",
         "5th",
@@ -71,13 +78,13 @@
         "Sun 11/15",
         "10:00 AM",
         "G2",
-        "2nd",
         "3rd",
-        "Kona Field 1"
+        "6th",
+        "Kona Field 2"
       ],
       [
         "Sun 11/15",
-        "11:00 AM",
+        "12:00 PM",
         "G3",
         "1st",
         "G1 Winner",
@@ -85,45 +92,18 @@
       ],
       [
         "Sun 11/15",
-        "1:00 PM",
-        "G4",
-        "G3 Winner",
-        "G2 Winner",
-        "Kona Field 1"
-      ]
-    ]
-  ],
-  "intermediate": [
-    [
-      [
-        "Sat 11/14",
-        "10:00 AM",
-        "Yoshi Krazy",
-        "SAFEwords",
-        "Kona Field 2"
-      ],
-      [
-        "Sat 11/14",
         "12:00 PM",
-        "Yoshi Krazy",
-        "SAFEwords",
+        "G4",
+        "2nd",
+        "G2 Winner",
         "Kona Field 2"
       ],
-      [
-        "Sat 11/14",
-        "2:00 PM",
-        "SAFEwords",
-        "Yoshi Krazy",
-        "Kona Field 2"
-      ]
-    ],
-    [
       [
         "Sun 11/15",
-        "12:00 PM",
-        "G1",
-        "1st",
-        "2nd",
+        "1:00 PM",
+        "G5",
+        "G3 Winner",
+        "G4 Winner",
         "Kona Field 1"
       ]
     ]

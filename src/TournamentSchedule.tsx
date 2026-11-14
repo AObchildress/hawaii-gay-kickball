@@ -4,7 +4,6 @@ import { BookOpen, ArrowUpRight } from 'lucide-react';
 
 const divisions = [
   { name: 'Competitive', games: schedule.competitive, href: 'https://teamsideline.com/sites/aikaneohana/schedule/741915/Competitive' },
-  { name: 'Intermediate', games: schedule.intermediate, href: 'https://teamsideline.com/sites/aikaneohana/schedule/741916/Intermediate' },
 ];
 
 const saturdayUmpires: Record<string, string> = umpireAssignments;
@@ -35,7 +34,7 @@ export default function TournamentSchedule() {
           <div key={day.index} className="min-w-0 rounded-2xl bg-slate-950/90 p-4 shadow-xl md:p-5">
             <h4 className="text-xl font-extrabold">{day.title}</h4>
             <p className="mt-1 text-sm text-amber-300">{day.date}</p>
-            {day.index === 1 && <p className="mt-2 text-sm text-slate-300">Sunday includes playoff rounds and both division finals. Seeds are determined by pool play; game numbers refer to that division’s bracket.</p>}
+            {day.index === 1 && <p className="mt-2 text-sm text-slate-300">Sunday includes playoff rounds and the Competitive championship final. Seeds are determined by pool play; game numbers refer to the bracket.</p>}
             {divisions.map((division) => (
               <div key={division.name} className="mt-4">
                 <h5 className="mb-2 text-base font-bold text-teal-300">{division.name}</h5>
