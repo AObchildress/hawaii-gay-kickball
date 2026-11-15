@@ -12,7 +12,7 @@ const sundayFirstBaseTeams: Record<string, string> = {
   G1: 'Dirty Bases',
   G2: 'I Love DP',
   G3: 'G2 Loser',
-  G4: 'G1 Loser',
+  G4: 'Spread Eagles',
   G5: 'G3 Loser',
 };
 
