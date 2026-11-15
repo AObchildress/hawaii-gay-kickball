@@ -6,7 +6,7 @@ const divisions = [
   { name: 'Competitive', games: schedule.competitive, href: 'https://teamsideline.com/sites/aikaneohana/schedule/741915/Competitive' },
 ];
 
-const saturdayUmpires: Record<string, string> = umpireAssignments;
+const gameUmpires: Record<string, string> = umpireAssignments;
 
 export default function TournamentSchedule() {
   return (
@@ -47,27 +47,28 @@ export default function TournamentSchedule() {
                         {day.index === 1 && <th scope="col" className="px-2 py-2">Game</th>}
                         <th scope="col" className="px-2 py-2">Home / Away</th>
                         <th scope="col" className="px-2 py-2">Field</th>
-                        {day.index === 0 && <th scope="col" className="px-2 py-2">Umpire</th>}
+                        <th scope="col" className="px-2 py-2">Umpire</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-white/10">
                       {division.games[day.index].map((game, index) => {
                         const offset = day.index === 1 ? 1 : 0;
                         const isFinal = day.index === 1 && index === division.games[1].length - 1;
-                        const umpire = saturdayUmpires[game.join('|')] ?? 'TBD';
+                        const umpire = gameUmpires[game.join('|')] ?? 'TBD';
                         return (
                           <tr key={index} className={isFinal ? 'bg-amber-300/10' : ''}>
                             <td className="whitespace-nowrap px-2 py-2 font-bold">{game[1]}</td>
                             {day.index === 1 && <td className="px-2 py-2">{game[2]}{isFinal && <span className="mt-1 block text-xs font-bold text-amber-300">Final</span>}</td>}
                             <td className="min-w-32 px-2 py-2"><span className="block">{game[2 + offset]}</span><span className="text-slate-300">vs. {game[3 + offset]}</span></td>
                             <td className="whitespace-nowrap px-2 py-2">{game[4 + offset]}</td>
-                            {day.index === 0 && <td className={`min-w-24 px-2 py-2 ${umpire === 'TBD' ? 'font-bold text-amber-300' : 'text-teal-200'}`}>{umpire}</td>}
+                            <td className={`min-w-24 px-2 py-2 ${umpire === 'TBD' ? 'font-bold text-amber-300' : 'text-teal-200'}`}>{umpire}</td>
                           </tr>
                         );
                       })}
                     </tbody>
                   </table>
                 </div>
+                {day.index === 1 && <p className="mt-3 text-xs leading-relaxed text-slate-300">*Final: Nathan Schapiro if Slutty Innings are eliminated; otherwise Mari Castro. Neither umpire will officiate their own team.</p>}
                 <a href={division.href} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm font-bold text-teal-300 underline underline-offset-4 hover:text-white">{division.name} schedule &amp; bracket ↗</a>
               </div>
             ))}
