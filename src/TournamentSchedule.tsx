@@ -9,11 +9,11 @@ const divisions = [
 const gameUmpires: Record<string, string> = umpireAssignments;
 
 const sundayFirstBaseTeams: Record<string, string> = {
-  G1: 'Dirty Bases',
-  G2: 'I Love DP',
+  G1: 'None',
+  G2: 'G1 Loser',
   G3: 'G2 Loser',
-  G4: 'Spread Eagles',
-  G5: 'G3 Loser',
+  G4: 'G3 Loser',
+  G5: 'G4 Loser',
 };
 
 export default function TournamentSchedule() {
@@ -71,7 +71,7 @@ export default function TournamentSchedule() {
                             <td className="px-2 py-2">{game[4 + offset]}</td>
                             <td className={`min-w-24 px-2 py-2 ${umpire === 'TBD' ? 'font-bold text-amber-300' : 'text-teal-200'}`}>
                               <span className="block">{day.index === 1 && <span className="block text-xs text-slate-400">Main umpire</span>}{umpire}</span>
-                              {day.index === 1 && <span className="mt-2 block"><span className="block text-xs text-slate-400">1st base team</span>{sundayFirstBaseTeams[game[2]] ?? 'TBD'}</span>}
+                              {day.index === 1 && game[2] !== 'G1' && <span className="mt-2 block"><span className="block text-xs text-slate-400">1st base team</span>{sundayFirstBaseTeams[game[2]] ?? 'TBD'}</span>}
                             </td>
                           </tr>
                         );
@@ -80,7 +80,7 @@ export default function TournamentSchedule() {
                   </table>
                 </div>
                 {day.index === 1 && <p className="mt-3 text-xs leading-relaxed text-slate-300">*Final: Nathan Schapiro if Slutty Innings are eliminated; otherwise Mari Castro. Neither umpire will officiate their own team.</p>}
-                {day.index === 1 && <p className="mt-2 text-xs leading-relaxed text-slate-300">Each assigned team supplies one first-base umpire. “Loser” means the team eliminated from that bracket game.</p>}
+                {day.index === 1 && <p className="mt-2 text-xs leading-relaxed text-slate-300">No first-base umpire is assigned to the 10 AM game. After each game, the losing team supplies one first-base umpire for the next game.</p>}
                 <a href={division.href} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm font-bold text-teal-300 underline underline-offset-4 hover:text-white">{division.name} schedule &amp; bracket ↗</a>
               </div>
             ))}
