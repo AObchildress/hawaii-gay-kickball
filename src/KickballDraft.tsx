@@ -470,7 +470,7 @@ export default function HawaiiGayKickballShell() {
                       { time: '4–8 PM', name: 'Splash Landing Pool Party', detail: 'Pacific 19' },
                     ] },
                     { day: 'Sunday, Nov. 15', events: [
-                      { time: '9 AM–2 PM', name: 'Elimination Games' },
+                      { time: 'FROM 10 AM', name: 'Elimination Games' },
                       { time: '12 PM', name: 'Lunch on the Fields' },
                       { time: 'After the games', name: 'Closing Ceremony & Awards' },
                       { time: '6–9 PM', name: 'Final Boarding Call Closing Party', detail: 'MyBar' },
