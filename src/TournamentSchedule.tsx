@@ -10,8 +10,8 @@ const gameUmpires: Record<string, string> = umpireAssignments;
 
 const sundayFirstBaseTeams: Record<string, string> = {
   G1: 'None',
-  G2: 'G1 Loser',
-  G3: 'G2 Loser',
+  G2: 'Spread Eagles',
+  G3: 'Yoshi Krazy',
   G4: 'G3 Loser',
   G5: 'G4 Loser',
 };
@@ -79,7 +79,6 @@ export default function TournamentSchedule() {
                     </tbody>
                   </table>
                 </div>
-                {day.index === 1 && <p className="mt-3 text-xs leading-relaxed text-slate-300">*Final: Nathan Schapiro if Slutty Innings are eliminated; otherwise Mari Castro. Neither umpire will officiate their own team.</p>}
                 {day.index === 1 && <p className="mt-2 text-xs leading-relaxed text-slate-300">No first-base umpire is assigned to the 10 AM game. After each game, the losing team supplies one first-base umpire for the next game.</p>}
                 <a href={division.href} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm font-bold text-teal-300 underline underline-offset-4 hover:text-white">{division.name} schedule &amp; bracket ↗</a>
               </div>
