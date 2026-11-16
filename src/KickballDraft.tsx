@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import TournamentSchedule from './TournamentSchedule';
+import TournamentSchedule, { TournamentResults } from './TournamentSchedule';
 import {
   ArrowRight,
   Calendar,
@@ -223,8 +223,8 @@ export default function HawaiiGayKickballShell() {
               <a href="#about" className="hover:text-teal-600 transition">About</a>
               <a href="#board" className="hover:text-teal-600 transition">Board</a>
               <a href="#events" className="hover:text-teal-600 transition">Upcoming Events</a>
-              <a href="#classic" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
               <a href="#schedule" className="hover:text-teal-600 transition">Season 11</a>
+              <a href="#classic" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
               <a href="#season-11-sponsorship" className="whitespace-nowrap rounded-full bg-amber-300 px-4 py-2 font-bold text-slate-900 transition hover:bg-amber-200">Sponsor Season 11</a>
               <a href="#sponsors" className="hover:text-teal-600 transition">Sponsors</a>
               <a href="#photos" className="hover:text-teal-600 transition">League Photos</a>
@@ -267,18 +267,18 @@ export default function HawaiiGayKickballShell() {
               Upcoming Events
             </a>
             <a
-              href="#classic"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              2026 Aloha Kickball Classic
-            </a>
-            <a
               href="#schedule"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-slate-700 font-medium"
             >
               Season 11
+            </a>
+            <a
+              href="#classic"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-slate-700 font-medium"
+            >
+              2026 Aloha Kickball Classic
             </a>
             <a
               href="#season-11-sponsorship"
@@ -392,6 +392,111 @@ export default function HawaiiGayKickballShell() {
 
       </section>
 
+      <TournamentResults />
+
+      {/* Schedule / Weekly Themes Section */}
+      <section id="schedule" className="bg-slate-100 py-20 px-4 border-y border-slate-200 scroll-mt-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Season 11 Updates & Schedule</h2>
+            <p className="text-slate-600 mt-2">Check back here for weekly spirit themes, key dates, and game day schedules.</p>
+          </div>
+
+          <section aria-labelledby="season-11-registration-title" className="mb-8 rounded-2xl border border-teal-200 border-t-4 border-t-teal-500 bg-white p-6 shadow-sm md:p-8">
+            <h3 id="season-11-registration-title" className="flex items-center gap-3 text-2xl font-bold text-slate-900"><Users className="h-6 w-6 text-teal-600" aria-hidden="true" /> Season 11 Registration</h3>
+            <p className="mt-3 text-slate-600">Registration opens November 15, 2026 at 5 PM HST and runs through December 31, 2026.</p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl border border-teal-200 bg-teal-50 p-5">
+                <p className="text-sm font-bold uppercase tracking-wide text-teal-800">Early Price</p>
+                <p className="mt-2 text-3xl font-extrabold text-slate-900">$60</p>
+                <p className="mt-2 text-sm text-slate-700">November 15–30, 2026</p>
+                <p className="mt-1 text-xs text-slate-600">Opens November 15 at 5 PM HST.</p>
+              </div>
+              <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
+                <p className="text-sm font-bold uppercase tracking-wide text-violet-800">Regular Price</p>
+                <p className="mt-2 text-3xl font-extrabold text-slate-900">$75</p>
+                <p className="mt-2 text-sm text-slate-700">December 1–31, 2026</p>
+              </div>
+            </div>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <a href="https://teamsideline.com/sites/aikaneohana/program/122491/Hawaii-Gay-Kickball-Season-11" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-4 font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">Captains Registration <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
+              <a href="https://forms.gle/ukNa2nyNZyF4WhXT7" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">Free Agent Form <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
+            </div>
+            <p className="mt-3 text-xs text-slate-500">Both links open in a new tab.</p>
+          </section>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Key Season Dates */}
+            <div className="season-dates bg-white p-6 md:p-8 rounded-2xl shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
+                <CalendarDays className="text-teal-600" /> Key Season Dates
+              </h3>
+              <p className="mb-4 text-sm text-slate-600">All times Hawaiʻi Standard Time (HST).</p>
+              <ul className="space-y-3">
+                {[
+                  { title: 'Registration', date: 'Nov. 15–Dec. 31, 2026', detail: 'Opens November 15 at 5:00 PM; runs through December 31.' },
+                  { title: 'Clinics', dates: ['Dec. 5, 2026', 'Jan. 9, 2027', 'Jan. 16, 2027', 'Jan. 23, 2027', 'Jan. 30, 2027'], detail: 'All clinics: 9:00 AM–12:00 PM · Softball Fields 2 & 3' },
+                  { title: 'Season 11 Opening Party', date: 'Feb. 6, 2027' },
+                  { title: 'Regular Season Games', date: 'Feb. 20–Apr. 10, 2027' },
+                  { title: 'Playoffs', date: 'Apr. 17, 2027' },
+                  { title: 'Rain Delay Backup Weekends', date: 'Apr. 24 & May 1, 2027' },
+                ].map((item) => (
+                  <li
+                    key={item.title}
+                    className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3"
+                  >
+                    <div className={`flex flex-col items-start justify-between gap-2 ${item.dates ? '' : 'lg:flex-row'}`}>
+                      <span className="font-semibold text-slate-800">{item.title}</span>
+                      <div className="flex flex-wrap gap-2">
+                        {(item.dates ?? [item.date]).map((date) => (
+                          <span key={date} className="rounded-xl bg-teal-100 px-3 py-1 text-sm font-bold text-teal-800 lg:text-right">{date}</span>
+                        ))}
+                      </div>
+                    </div>
+                    {item.detail && <p className="mt-2 text-sm text-slate-600">{item.detail}</p>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Spirit Themes */}
+            <div className="spirit-card bg-gradient-to-br from-teal-700 to-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-md">
+              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                <Shirt className="text-rose-400" /> Spirit & Dress Themes
+              </h3>
+              <p className="text-slate-300 text-sm mb-6">
+                Season 11 spirit and dress themes are being planned.
+              </p>
+              <div className="rounded-xl border border-dashed border-white/30 bg-white/10 p-8 text-center backdrop-blur">
+                <p className="text-3xl font-black tracking-[0.18em] text-amber-300">TBA</p>
+                <p className="mt-3 text-sm font-medium text-slate-300">Weekly themes will be announced soon.</p>
+              </div>
+            </div>
+          </div>
+
+          <section id="season-11-sponsorship" aria-labelledby="season-11-sponsorship-title" className="mt-8 scroll-mt-28 sponsorship-feature rounded-3xl border border-white/40 p-6 text-white shadow-xl md:p-10">
+            <span className="inline-flex rounded-full bg-amber-300 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-slate-900">Community Partnerships</span>
+            <h3 id="season-11-sponsorship-title" className="mt-4 text-3xl font-extrabold text-white md:text-4xl">Sponsor Season 11</h3>
+            <div className="mt-4 max-w-4xl space-y-4 leading-relaxed text-white/95">
+              <p>Support Hawaiʻi’s largest LGBTQ+ and Ally sports league and connect your business with 500 players across 24 teams. Top-tier sponsorships include your logo on our jerseys and access to VeraTaps, a digital wallet-pass marketing tool for connecting with customers and tracking engagement.</p>
+              <p>Jersey-logo sponsorships close December 31, 2026; entry-level sponsorships without jersey logos are available through January 31, 2027.</p>
+              <p>Explore the packages below and contact our Sponsorship Committee to find the right fit.</p>
+            </div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <a href="/documents/higkl-season-11-sponsorship-package.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl bg-amber-300 px-5 py-4 font-bold text-slate-900 transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">
+                <span>Season 11 Sponsorship Package <span className="block text-sm font-normal text-slate-700">View PDF · 3.3 MB · Opens in a new tab</span></span>
+                <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
+              </a>
+              <a href="/documents/verataps-higkl-season-11-info.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl border border-white/40 bg-white px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">
+                <span>VeraTaps Marketing Information <span className="block text-sm font-normal text-violet-800">View PDF · 4.1 MB · Opens in a new tab</span></span>
+                <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
+              </a>
+            </div>
+            <a href="mailto:brandon@hawaiigaykickball.com,kanoa@hawaiigaykickball.com,eric@hawaiigaykickball.com?subject=Season%2011%20Sponsorship" className="mt-6 inline-flex items-center gap-2 font-bold text-white underline underline-offset-4 hover:text-amber-200">Contact the Sponsorship Committee <Mail className="h-4 w-4" aria-hidden="true" /></a>
+          </section>
+        </div>
+      </section>
+
       {/* 2026 Aloha Kickball Classic */}
       <section id="classic" className="relative overflow-hidden bg-gradient-to-br from-rose-600 via-orange-500 to-amber-400 px-4 py-20 text-white scroll-mt-24">
         <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10" />
@@ -494,96 +599,6 @@ export default function HawaiiGayKickballShell() {
                 </dl>
         </section>
         <TournamentSchedule />
-      </section>
-
-      {/* Schedule / Weekly Themes Section */}
-      <section id="schedule" className="bg-slate-100 py-20 px-4 border-y border-slate-200 scroll-mt-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Season 11 Updates & Schedule</h2>
-            <p className="text-slate-600 mt-2">Check back here for weekly spirit themes, key dates, and game day schedules.</p>
-          </div>
-
-          <section aria-labelledby="season-11-registration-title" className="mb-8 rounded-2xl border border-teal-200 border-t-4 border-t-teal-500 bg-white p-6 shadow-sm md:p-8">
-            <h3 id="season-11-registration-title" className="flex items-center gap-3 text-2xl font-bold text-slate-900"><Users className="h-6 w-6 text-teal-600" aria-hidden="true" /> Season 11 Registration</h3>
-            <p className="mt-3 text-slate-600">Registration opens November 15, 2026 at 5 PM HST and runs through December 31, 2026.</p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <a href="https://teamsideline.com/sites/aikaneohana/program/122491/Hawaii-Gay-Kickball-Season-11" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-4 font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">Captains Registration <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
-              <a href="https://forms.gle/ukNa2nyNZyF4WhXT7" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">Free Agent Form <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
-            </div>
-            <p className="mt-3 text-xs text-slate-500">Both links open in a new tab.</p>
-          </section>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Key Season Dates */}
-            <div className="season-dates bg-white p-6 md:p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
-                <CalendarDays className="text-teal-600" /> Key Season Dates
-              </h3>
-              <p className="mb-4 text-sm text-slate-600">All times Hawaiʻi Standard Time (HST).</p>
-              <ul className="space-y-3">
-                {[
-                  { title: 'Registration', date: 'Nov. 15–Dec. 31, 2026', detail: 'Opens November 15 at 5:00 PM; runs through December 31.' },
-                  { title: 'Clinics', dates: ['Dec. 5, 2026', 'Jan. 9, 2027', 'Jan. 16, 2027', 'Jan. 23, 2027', 'Jan. 30, 2027'], detail: 'All clinics: 9:00 AM–12:00 PM · Softball Fields 2 & 3' },
-                  { title: 'Season 11 Opening Party', date: 'Feb. 6, 2027' },
-                  { title: 'Regular Season Games', date: 'Feb. 20–Apr. 10, 2027' },
-                  { title: 'Playoffs', date: 'Apr. 17, 2027' },
-                  { title: 'Rain Delay Backup Weekends', date: 'Apr. 24 & May 1, 2027' },
-                ].map((item) => (
-                  <li
-                    key={item.title}
-                    className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3"
-                  >
-                    <div className={`flex flex-col items-start justify-between gap-2 ${item.dates ? '' : 'lg:flex-row'}`}>
-                      <span className="font-semibold text-slate-800">{item.title}</span>
-                      <div className="flex flex-wrap gap-2">
-                        {(item.dates ?? [item.date]).map((date) => (
-                          <span key={date} className="rounded-xl bg-teal-100 px-3 py-1 text-sm font-bold text-teal-800 lg:text-right">{date}</span>
-                        ))}
-                      </div>
-                    </div>
-                    {item.detail && <p className="mt-2 text-sm text-slate-600">{item.detail}</p>}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Spirit Themes */}
-            <div className="spirit-card bg-gradient-to-br from-teal-700 to-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-md">
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Shirt className="text-rose-400" /> Spirit & Dress Themes
-              </h3>
-              <p className="text-slate-300 text-sm mb-6">
-                Season 11 spirit and dress themes are being planned.
-              </p>
-              <div className="rounded-xl border border-dashed border-white/30 bg-white/10 p-8 text-center backdrop-blur">
-                <p className="text-3xl font-black tracking-[0.18em] text-amber-300">TBA</p>
-                <p className="mt-3 text-sm font-medium text-slate-300">Weekly themes will be announced soon.</p>
-              </div>
-            </div>
-          </div>
-
-          <section id="season-11-sponsorship" aria-labelledby="season-11-sponsorship-title" className="mt-8 scroll-mt-28 sponsorship-feature rounded-3xl border border-white/40 p-6 text-white shadow-xl md:p-10">
-            <span className="inline-flex rounded-full bg-amber-300 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-slate-900">Community Partnerships</span>
-            <h3 id="season-11-sponsorship-title" className="mt-4 text-3xl font-extrabold text-white md:text-4xl">Sponsor Season 11</h3>
-            <div className="mt-4 max-w-4xl space-y-4 leading-relaxed text-white/95">
-              <p>Support Hawaiʻi’s largest LGBTQ+ and Ally sports league and connect your business with 500 players across 24 teams. Top-tier sponsorships include your logo on our jerseys and access to VeraTaps, a digital wallet-pass marketing tool for connecting with customers and tracking engagement.</p>
-              <p>Jersey-logo sponsorships close December 31, 2026; entry-level sponsorships without jersey logos are available through January 31, 2027.</p>
-              <p>Explore the packages below and contact our Sponsorship Committee to find the right fit.</p>
-            </div>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <a href="/documents/higkl-season-11-sponsorship-package.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl bg-amber-300 px-5 py-4 font-bold text-slate-900 transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">
-                <span>Season 11 Sponsorship Package <span className="block text-sm font-normal text-slate-700">View PDF · 3.3 MB · Opens in a new tab</span></span>
-                <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
-              </a>
-              <a href="/documents/verataps-higkl-season-11-info.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl border border-white/40 bg-white px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">
-                <span>VeraTaps Marketing Information <span className="block text-sm font-normal text-violet-800">View PDF · 4.1 MB · Opens in a new tab</span></span>
-                <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
-              </a>
-            </div>
-            <a href="mailto:brandon@hawaiigaykickball.com,kanoa@hawaiigaykickball.com,eric@hawaiigaykickball.com?subject=Season%2011%20Sponsorship" className="mt-6 inline-flex items-center gap-2 font-bold text-white underline underline-offset-4 hover:text-amber-200">Contact the Sponsorship Committee <Mail className="h-4 w-4" aria-hidden="true" /></a>
-          </section>
-        </div>
       </section>
 
       {/* Committee Volunteers */}
