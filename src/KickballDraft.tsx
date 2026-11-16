@@ -498,69 +498,15 @@ export default function HawaiiGayKickballShell() {
       </section>
 
       {/* 2026 Aloha Kickball Classic */}
-      <section id="classic" className="relative overflow-hidden bg-gradient-to-br from-rose-600 via-orange-500 to-amber-400 px-4 py-20 text-white scroll-mt-24">
-        <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10" />
-        <div className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-fuchsia-700/20" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-6">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] backdrop-blur">
-              <Trophy className="h-4 w-4" /> Annual Tournament
-            </span>
-            <div>
-              <p className="mb-2 text-lg font-bold text-amber-100">Save the date</p>
-              <h2 className="text-4xl font-black leading-tight md:text-6xl">2026 Aloha Kickball Classic</h2>
-            </div>
-            <p className="max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl">
-              Our annual tournament is headed to Kona for a weekend of kickball, community, friendly competition, and island hospitality.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-white/30 bg-slate-950/85 p-8 shadow-2xl backdrop-blur md:p-10">
-            <div className="space-y-7">
-              <div className="flex items-start gap-4">
-                <div className="rounded-xl bg-rose-500/20 p-3 text-rose-300">
-                  <CalendarDays className="h-7 w-7" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Tournament Dates</p>
-                  <p className="mt-1 text-2xl font-black">November 13–15, 2026</p>
-                </div>
-              </div>
-              <div className="h-px bg-white/10" />
-              <div className="flex items-start gap-4">
-                <div className="rounded-xl bg-teal-500/20 p-3 text-teal-300">
-                  <MapPin className="h-7 w-7" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Destination</p>
-                  <p className="mt-1 text-2xl font-black">Kona, Hawaiʻi Island</p>
-                </div>
-              </div>
-              <div className="h-px bg-white/10" />
-              <div className="flex items-start gap-4">
-                <div className="rounded-xl bg-amber-500/20 p-3 text-amber-300">
-                  <Users className="h-7 w-7" />
-                </div>
-                <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Experience</p>
-                  <p className="mt-1 text-lg font-bold">Kickball, connection, and aloha</p>
-                </div>
-              </div>
-              <div className="h-px bg-white/10" />
-              <dl>
-                  <div className="rounded-xl bg-white/10 p-4">
-                    <dt className="font-bold uppercase tracking-wider text-amber-300">Host Hotel</dt>
-                    <dd className="mt-1 text-base font-bold text-white">Pacific 19</dd>
-                  </div>
-              </dl>
-            </div>
-          </div>
+      <section id="classic" className="bg-gradient-to-br from-rose-600 via-orange-500 to-amber-400 px-4 py-10 text-white scroll-mt-24">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-bold uppercase tracking-widest text-white/80">Tournament Recap</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">2026 Aloha Kickball Classic</h2>
+          <p className="mt-2 font-semibold">November 13–15, 2026 · Kona, Hawaiʻi Island</p>
+          <p className="mt-2 text-sm text-white/90">Mahalo for a wonderful weekend of kickball, community, and aloha! Host hotel: Pacific 19.</p>
         </div>
-        <section aria-labelledby="weekend-schedule-title" className="relative mx-auto mt-8 max-w-7xl rounded-3xl border border-white/30 bg-slate-950/85 p-6 shadow-xl md:p-8">
-                <h3 id="weekend-schedule-title" className="mb-3 flex items-center gap-2 text-2xl font-black">
-                  <Clock className="h-5 w-5 text-rose-300" /> Weekend Schedule
-                </h3>
+        <details className="mx-auto mt-4 max-w-7xl rounded-xl border border-white/30 bg-slate-950/85 p-4">
+                <summary className="cursor-pointer font-bold">Weekend Schedule · View Details</summary>
                 <p className="mb-4 text-sm text-slate-300">November 13–15, 2026 · All times HST</p>
                 <dl className="grid gap-6 text-sm md:grid-cols-3">
                   {[
@@ -597,7 +543,7 @@ export default function HawaiiGayKickballShell() {
                     </div>
                   ))}
                 </dl>
-        </section>
+        </details>
         <TournamentSchedule />
       </section>
 
