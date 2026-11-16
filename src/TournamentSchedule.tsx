@@ -12,8 +12,8 @@ const sundayFirstBaseTeams: Record<string, string> = {
   G1: 'None',
   G2: 'Spread Eagles',
   G3: 'Yoshi Krazy',
-  G4: 'G3 Loser',
-  G5: 'G4 Loser',
+  G4: 'Slutty Innings',
+  G5: 'I Love DP',
 };
 
 export default function TournamentSchedule() {
