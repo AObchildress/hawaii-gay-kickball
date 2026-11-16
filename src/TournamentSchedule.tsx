@@ -27,13 +27,12 @@ export function TournamentResults() {
 
 export default function TournamentSchedule() {
   return (
-    <div className="relative mx-auto mt-8 max-w-7xl border-t border-white/30 pt-6">
-      <h3 className="text-3xl font-extrabold">Game Schedule</h3>
-      <a
+    <div className="relative mx-auto mt-4 max-w-7xl">
+            <a
         href="https://teamsideline.com/sites/aikaneohana/schedule/741915/Competitive"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-5 inline-flex items-center gap-2 rounded-xl bg-slate-950 px-5 py-3 font-bold text-teal-200 shadow-md transition hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        className="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-5 py-3 font-bold text-teal-200 shadow-md transition hover:bg-slate-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
       >
         View Both Days’ Game Schedules &amp; Bracket
         <ArrowUpRight className="h-5 w-5 shrink-0" aria-hidden="true" />
