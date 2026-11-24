@@ -408,13 +408,13 @@ export default function HawaiiGayKickballShell() {
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl border border-teal-200 bg-teal-50 p-5">
                 <p className="text-sm font-bold uppercase tracking-wide text-teal-800">Early Price</p>
-                <p className="mt-2 text-3xl font-extrabold text-slate-900">$60</p>
+                <p className="mt-2 text-3xl font-extrabold text-slate-900">$60 <span className="text-base font-semibold">per person</span></p>
                 <p className="mt-2 text-sm text-slate-700">November 15–30, 2026</p>
                 <p className="mt-1 text-xs text-slate-600">Opens November 15 at 5 PM HST.</p>
               </div>
               <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
                 <p className="text-sm font-bold uppercase tracking-wide text-violet-800">Regular Price</p>
-                <p className="mt-2 text-3xl font-extrabold text-slate-900">$75</p>
+                <p className="mt-2 text-3xl font-extrabold text-slate-900">$75 <span className="text-base font-semibold">per person</span></p>
                 <p className="mt-2 text-sm text-slate-700">December 1–31, 2026</p>
               </div>
             </div>
