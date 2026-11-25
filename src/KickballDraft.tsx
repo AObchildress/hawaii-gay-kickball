@@ -137,6 +137,18 @@ const OPEN_COMMITTEES = [
   },
 ];
 
+const NAV_LINKS = [
+  { href: '#about', label: 'About' },
+  { href: '#season-11-registration', label: 'Season 11' },
+  { href: '#season-11-sponsorship', label: 'Sponsor Season 11', featured: true },
+  { href: '#events', label: 'Upcoming Events' },
+  { href: '#sponsors', label: 'Sponsors' },
+  { href: '#photos', label: 'League Photos' },
+  { href: '#board', label: 'Board', mobileLabel: 'Board of Directors' },
+  { href: '#contact', label: 'Contact' },
+  { href: '/2026-aloha-kickball-classic/', label: '2026 Aloha Kickball Classic' },
+];
+
 export default function HawaiiGayKickballShell() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [events, setEvents] = useState<CalendarEvent[]>([]);
@@ -218,15 +230,11 @@ export default function HawaiiGayKickballShell() {
 
             {/* Desktop Nav Links */}
             <div className="hidden xl:flex items-center gap-4 text-sm font-medium text-slate-600">
-              <a href="#about" className="hover:text-teal-600 transition">About</a>
-              <a href="#board" className="hover:text-teal-600 transition">Board</a>
-              <a href="#events" className="hover:text-teal-600 transition">Upcoming Events</a>
-              <a href="#season-11-registration" className="hover:text-teal-600 transition">Season 11</a>
-              <a href="/2026-aloha-kickball-classic/" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
-              <a href="#season-11-sponsorship" className="whitespace-nowrap rounded-full bg-amber-300 px-4 py-2 font-bold text-slate-900 transition hover:bg-amber-200">Sponsor Season 11</a>
-              <a href="#sponsors" className="hover:text-teal-600 transition">Sponsors</a>
-              <a href="#photos" className="hover:text-teal-600 transition">League Photos</a>
-              <a href="#contact" className="hover:text-teal-600 transition">Contact</a>
+              {NAV_LINKS.map(({ href, label, featured }) => (
+                <a key={href} href={href} className={featured ? 'whitespace-nowrap rounded-full bg-amber-300 px-4 py-2 font-bold text-slate-900 transition hover:bg-amber-200' : 'transition hover:text-teal-600'}>
+                  {label}
+                </a>
+              ))}
             </div>
 
             {/* Mobile Menu Toggle Button */}
@@ -243,69 +251,16 @@ export default function HawaiiGayKickballShell() {
         {/* Mobile Nav Dropdown */}
         {mobileMenuOpen && (
           <div className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
-            <a
-              href="#about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              About
-            </a>
-            <a
-              href="#board"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              Board of Directors
-            </a>
-            <a
-              href="#events"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              Upcoming Events
-            </a>
-            <a
-              href="#season-11-registration"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              Season 11
-            </a>
-            <a
-              href="/2026-aloha-kickball-classic/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              2026 Aloha Kickball Classic
-            </a>
-            <a
-              href="#season-11-sponsorship"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block rounded-xl bg-amber-100 px-4 py-3 font-bold text-teal-900"
-            >
-              Sponsor Season 11
-            </a>
-            <a
-              href="#sponsors"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              Sponsors
-            </a>
-            <a
-              href="#photos"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              League Photos
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-700 font-medium"
-            >
-              Contact
-            </a>
+            {NAV_LINKS.map(({ href, label, mobileLabel, featured }) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={featured ? 'block rounded-xl bg-amber-100 px-4 py-3 font-bold text-teal-900' : 'block py-2 font-medium text-slate-700'}
+              >
+                {mobileLabel ?? label}
+              </a>
+            ))}
           </div>
         )}
       </nav>
@@ -384,7 +339,18 @@ export default function HawaiiGayKickballShell() {
         </div>
       </section>
 
-      <section id="season-11-registration" aria-labelledby="season-11-registration-title" className="scroll-mt-28 px-4 pt-10 sm:pt-14">
+      {/* About Section */}
+      <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-14 sm:py-16">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Our Mission</h2>
+          <div className="w-20 h-1 bg-teal-500 mx-auto rounded-full" />
+          <p className="text-lg text-slate-600 pt-2">
+            The Hawaiʻi Gay Kickball league is a co-ed community minded group that strives to provide an inclusive, safe, and enjoyable atmosphere for the lesbian, gay, bisexual, transgender, queer and the LGBTQI-friendly community. Our kickball league fosters sportsmanship, friendly competition and community building through the sport of kickball.
+          </p>
+        </div>
+      </section>
+
+      <section id="season-11-registration" aria-labelledby="season-11-registration-title" className="scroll-mt-28 px-4 pb-10 sm:pb-14">
         <div className="mx-auto grid max-w-7xl gap-6 rounded-3xl bg-linear-to-br from-teal-900 via-cyan-900 to-slate-900 p-6 text-white shadow-xl sm:p-8 lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-10 lg:p-10">
           <div>
             <h2 id="season-11-registration-title" className="scroll-mt-28 text-3xl font-black tracking-tight sm:text-4xl">Season 11 Registration</h2>
@@ -412,18 +378,6 @@ export default function HawaiiGayKickballShell() {
             <p className="mt-3 text-sm text-teal-50">Both links open in a new tab.</p>
           </div>
         </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 px-4 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Our Mission</h2>
-          <div className="w-20 h-1 bg-teal-500 mx-auto rounded-full" />
-          <p className="text-lg text-slate-600 pt-2">
-            The Hawaiʻi Gay Kickball league is a co-ed community minded group that strives to provide an inclusive, safe, and enjoyable atmosphere for the lesbian, gay, bisexual, transgender, queer and the LGBTQI-friendly community. Our kickball league fosters sportsmanship, friendly competition and community building through the sport of kickball.
-          </p>
-        </div>
-
       </section>
 
       {/* Schedule / Weekly Themes Section */}
