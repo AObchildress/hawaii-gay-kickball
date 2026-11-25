@@ -4,6 +4,11 @@ import tailwindcss from '@tailwindcss/vite';
 import { getUpcomingEvents } from './server/calendar-events.ts';
 
 export default defineConfig({
+  build: {
+    rolldownOptions: {
+      input: ['index.html', '2026-aloha-kickball-classic/index.html'],
+    },
+  },
   plugins: [
     react(),
     tailwindcss(),

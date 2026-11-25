@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import TournamentSchedule, { TournamentResults } from './TournamentSchedule';
 import {
   ArrowRight,
   Calendar,
@@ -12,7 +11,6 @@ import {
   Menu,
   Shirt,
   Sparkles,
-  Trophy,
   Users,
   X,
 } from 'lucide-react';
@@ -224,7 +222,7 @@ export default function HawaiiGayKickballShell() {
               <a href="#board" className="hover:text-teal-600 transition">Board</a>
               <a href="#events" className="hover:text-teal-600 transition">Upcoming Events</a>
               <a href="#season-11-registration" className="hover:text-teal-600 transition">Season 11</a>
-              <a href="#classic" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
+              <a href="/2026-aloha-kickball-classic/" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
               <a href="#season-11-sponsorship" className="whitespace-nowrap rounded-full bg-amber-300 px-4 py-2 font-bold text-slate-900 transition hover:bg-amber-200">Sponsor Season 11</a>
               <a href="#sponsors" className="hover:text-teal-600 transition">Sponsors</a>
               <a href="#photos" className="hover:text-teal-600 transition">League Photos</a>
@@ -274,7 +272,7 @@ export default function HawaiiGayKickballShell() {
               Season 11
             </a>
             <a
-              href="#classic"
+              href="/2026-aloha-kickball-classic/"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-slate-700 font-medium"
             >
@@ -506,57 +504,6 @@ export default function HawaiiGayKickballShell() {
             <a href="mailto:brandon@hawaiigaykickball.com,kanoa@hawaiigaykickball.com,eric@hawaiigaykickball.com?subject=Season%2011%20Sponsorship" className="mt-6 inline-flex items-center gap-2 font-bold text-white underline underline-offset-4 hover:text-amber-200">Contact the Sponsorship Committee <Mail className="h-4 w-4" aria-hidden="true" /></a>
           </section>
         </div>
-      </section>
-
-      {/* 2026 Aloha Kickball Classic */}
-      <section id="classic" aria-labelledby="classic-title" className="bg-gradient-to-br from-rose-800 via-orange-800 to-amber-800 px-4 py-10 text-white scroll-mt-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-bold uppercase tracking-widest text-white/80">Tournament Recap</p>
-          <h2 id="classic-title" className="mt-2 text-2xl font-black md:text-3xl">2026 Aloha Kickball Classic</h2>
-          <p className="mt-2 font-semibold">November 13–15, 2026 · Kona, Hawaiʻi Island</p>
-          <p className="mt-2 text-sm text-white/90">Mahalo for a wonderful weekend of kickball, community, and aloha! Host hotel: Pacific 19.</p>
-          <TournamentResults />
-        </div>
-        <details className="mx-auto mt-4 max-w-7xl rounded-xl border border-white/30 bg-slate-950/85 p-4">
-                <summary className="cursor-pointer font-bold">Weekend Schedule · View Details</summary>
-                <p className="mb-4 text-sm text-slate-300">November 13–15, 2026 · All times HST</p>
-                <dl className="grid gap-6 text-sm md:grid-cols-3">
-                  {[
-                    { day: 'Friday, Nov. 13', events: [
-                      { time: '5–7 PM', name: 'Captains Meeting & Registration', detail: 'Puna Chocolate Company' },
-                      { time: '8–11 PM', name: 'Tournament Kickoff', detail: 'MyBar · Theme: HIGKL Airlines' },
-                    ] },
-                    { day: 'Saturday, Nov. 14', events: [
-                      { time: '8:30 AM', name: 'Opening Ceremony' },
-                      { time: '9 AM–3 PM', name: 'Round Robin Games' },
-                      { time: '12 PM', name: 'Lunch on the Fields' },
-                      { time: '4–8 PM', name: 'Splash Landing Pool Party', detail: 'Pacific 19' },
-                    ] },
-                    { day: 'Sunday, Nov. 15', events: [
-                      { time: 'FROM 10 AM', name: 'Elimination Games' },
-                      { time: '12 PM', name: 'Lunch on the Fields' },
-                      { time: 'After the games', name: 'Closing Ceremony & Awards' },
-                      { time: '6–9 PM', name: 'Final Boarding Call Closing Party', detail: 'MyBar' },
-                    ] },
-                  ].map(({ day, events }) => (
-                    <div key={day} className="border-t border-white/15 pt-4">
-                      <dt className="mb-3 font-bold text-amber-300">{day}</dt>
-                      <dd>
-                        <ul className="space-y-3">
-                          {events.map((event) => (
-                            <li key={event.name}>
-                              <span className="block text-xs font-bold uppercase tracking-wide text-teal-300">{event.time}</span>
-                              <span className="mt-0.5 block font-semibold text-white">{event.name}</span>
-                              {event.detail && <span className="block text-slate-300">{event.detail}</span>}
-                            </li>
-                          ))}
-                        </ul>
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-        </details>
-        <TournamentSchedule />
       </section>
 
       {/* Committee Volunteers */}
