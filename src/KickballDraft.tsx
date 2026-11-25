@@ -150,8 +150,8 @@ const NAV_LINKS = [
   { href: '#events', label: 'Upcoming Events' },
   { href: '#sponsors', label: 'Sponsors' },
   { href: '#photos', label: 'League Photos' },
-  { href: '#sister-leagues', label: 'Sister Leagues' },
   { href: '#board', label: 'Board', mobileLabel: 'Board of Directors' },
+  { href: '#sister-leagues', label: 'Sister Leagues' },
   { href: '#contact', label: 'Contact' },
   { href: '/2026-aloha-kickball-classic/', label: '2026 Aloha Kickball Classic' },
 ];
@@ -728,34 +728,6 @@ export default function HawaiiGayKickballShell() {
         </div>
       </section>
 
-      <section id="sister-leagues" aria-labelledby="sister-leagues-title" className="scroll-mt-24 border-t border-teal-100 bg-linear-to-b from-teal-50 to-white px-4 py-14 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 id="sister-leagues-title" className="text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">Our Sister Leagues</h2>
-            <p className="mt-3 text-lg leading-relaxed text-slate-700">
-              <a href="https://aikaneohana.com/" className="font-bold text-teal-800 underline underline-offset-4 hover:text-teal-950">Aikāne ʻOhana</a> is our 501(c)(3) fiscal sponsor.
-            </p>
-          </div>
-          <ul className="mx-auto mt-6 grid max-w-3xl grid-cols-2 gap-3 md:grid-cols-4">
-            {SISTER_LEAGUES.map(({ name, logo, href }) => (
-              <li key={name}>
-                <a href={href} className="group flex h-full flex-col items-center rounded-xl border border-teal-100 bg-white p-3 text-center shadow-sm transition hover:border-teal-400 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">
-                  <img
-                    src={`/assets/sister-leagues/${logo}`}
-                    alt=""
-                    height="80"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-16 w-full object-contain sm:h-20"
-                  />
-                  <span className="mt-2 text-sm font-bold leading-snug text-teal-900 decoration-2 underline-offset-4 group-hover:underline group-focus-visible:underline">{name}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* Board of Directors */}
       <section id="board" className="bg-white py-20 px-4 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
@@ -786,6 +758,34 @@ export default function HawaiiGayKickballShell() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="sister-leagues" aria-labelledby="sister-leagues-title" className="scroll-mt-24 border-t border-teal-100 bg-linear-to-b from-teal-50 to-white px-4 py-14 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 id="sister-leagues-title" className="text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">Our Sister Leagues</h2>
+            <p className="mt-3 text-lg leading-relaxed text-slate-700">
+              <a href="https://aikaneohana.com/" className="font-bold text-teal-800 underline underline-offset-4 hover:text-teal-950">Aikāne ʻOhana</a> is our 501(c)(3) fiscal sponsor.
+            </p>
+          </div>
+          <ul className="mx-auto mt-6 grid max-w-3xl grid-cols-2 gap-3 md:grid-cols-4">
+            {SISTER_LEAGUES.map(({ name, logo, href }) => (
+              <li key={name}>
+                <a href={href} className="group flex h-full flex-col items-center rounded-xl border border-teal-100 bg-white p-3 text-center shadow-sm transition hover:border-teal-400 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">
+                  <img
+                    src={`/assets/sister-leagues/${logo}`}
+                    alt=""
+                    height="80"
+                    loading="lazy"
+                    decoding="async"
+                    className="h-16 w-full object-contain sm:h-20"
+                  />
+                  <span className="mt-2 text-sm font-bold leading-snug text-teal-900 decoration-2 underline-offset-4 group-hover:underline group-focus-visible:underline">{name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
