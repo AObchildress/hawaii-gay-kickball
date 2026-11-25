@@ -408,19 +408,19 @@ export default function HawaiiGayKickballShell() {
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl border border-teal-200 bg-teal-50 p-5">
                 <p className="text-sm font-bold uppercase tracking-wide text-teal-800">Early Price</p>
-                <p className="mt-2 text-3xl font-extrabold text-slate-900">$60 <span className="text-base font-semibold">per person</span></p>
+                <p className="mt-2 text-3xl font-extrabold text-slate-900">$60 <span className="text-base font-semibold">per player</span></p>
                 <p className="mt-2 text-sm text-slate-700">November 15–30, 2026</p>
                 <p className="mt-1 text-xs text-slate-600">Opens November 15 at 5 PM HST.</p>
               </div>
               <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
                 <p className="text-sm font-bold uppercase tracking-wide text-violet-800">Regular Price</p>
-                <p className="mt-2 text-3xl font-extrabold text-slate-900">$75 <span className="text-base font-semibold">per person</span></p>
+                <p className="mt-2 text-3xl font-extrabold text-slate-900">$75 <span className="text-base font-semibold">per player</span></p>
                 <p className="mt-2 text-sm text-slate-700">December 1–31, 2026</p>
               </div>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <a href="https://teamsideline.com/sites/aikaneohana/program/122491/Hawaii-Gay-Kickball-Season-11" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-4 font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">Captains Registration <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
-              <a href="https://forms.gle/ukNa2nyNZyF4WhXT7" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">Free Agent Form <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
+              <a href="https://forms.gle/QscQvw7xeifqffaL6" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">Free Agent Form <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
             </div>
             <p className="mt-3 text-xs text-slate-500">Both links open in a new tab.</p>
           </section>
