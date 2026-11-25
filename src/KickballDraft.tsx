@@ -139,7 +139,7 @@ const OPEN_COMMITTEES = [
 
 const NAV_LINKS = [
   { href: '#about', label: 'About' },
-  { href: '#season-11-registration', label: 'Season 11' },
+  { href: '#schedule', label: 'Season 11' },
   { href: '#season-11-sponsorship', label: 'Sponsor Season 11', featured: true },
   { href: '#events', label: 'Upcoming Events' },
   { href: '#sponsors', label: 'Sponsors' },
@@ -340,9 +340,9 @@ export default function HawaiiGayKickballShell() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-14 sm:py-16">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Our Mission</h2>
+      <section id="about" aria-labelledby="mission-title" className="mx-auto my-10 w-[calc(100%_-_2rem)] max-w-7xl scroll-mt-28 rounded-3xl border border-teal-100 bg-white px-6 py-10 shadow-sm sm:my-12 sm:px-10 sm:py-12">
+        <div className="mx-auto max-w-3xl space-y-3 text-center">
+          <h2 id="mission-title" className="text-3xl md:text-4xl font-extrabold text-slate-900">Our Mission</h2>
           <div className="w-20 h-1 bg-teal-500 mx-auto rounded-full" />
           <p className="text-lg text-slate-600 pt-2">
             The Hawaiʻi Gay Kickball league is a co-ed community minded group that strives to provide an inclusive, safe, and enjoyable atmosphere for the lesbian, gay, bisexual, transgender, queer and the LGBTQI-friendly community. Our kickball league fosters sportsmanship, friendly competition and community building through the sport of kickball.
@@ -350,47 +350,45 @@ export default function HawaiiGayKickballShell() {
         </div>
       </section>
 
-      <section id="season-11-registration" aria-labelledby="season-11-registration-title" className="scroll-mt-28 px-4 pb-10 sm:pb-14">
-        <div className="mx-auto grid max-w-7xl gap-6 rounded-3xl bg-linear-to-br from-teal-900 via-cyan-900 to-slate-900 p-6 text-white shadow-xl sm:p-8 lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-10 lg:p-10">
-          <div>
-            <h2 id="season-11-registration-title" className="scroll-mt-28 text-3xl font-black tracking-tight sm:text-4xl">Season 11 Registration</h2>
-            <p className="mt-3 max-w-md text-lg text-teal-50">Registration opens November 15, 2026 at 5 PM HST and runs through December 31, 2026.</p>
-            <a href="#schedule" className="mt-4 inline-block font-semibold text-teal-50 underline underline-offset-4 transition hover:text-white">View Season 11 schedule</a>
-          </div>
-          <div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-teal-200 bg-teal-50 p-5">
-                <p className="text-sm font-bold uppercase tracking-wide text-teal-800">Early Price</p>
-                <p className="mt-2 text-3xl font-extrabold text-slate-900">$60 <span className="text-base font-semibold">per player</span></p>
-                <p className="mt-2 text-sm text-slate-700">November 15–30, 2026</p>
-                <p className="mt-1 text-sm text-slate-600">Opens November 15 at 5 PM HST.</p>
-              </div>
-              <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
-                <p className="text-sm font-bold uppercase tracking-wide text-violet-800">Regular Price</p>
-                <p className="mt-2 text-3xl font-extrabold text-slate-900">$75 <span className="text-base font-semibold">per player</span></p>
-                <p className="mt-2 text-sm text-slate-700">December 1–31, 2026</p>
-              </div>
-            </div>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              <a href="https://teamsideline.com/sites/aikaneohana/program/122491/Hawaii-Gay-Kickball-Season-11" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center rounded-xl bg-amber-300 px-5 py-4 text-center font-bold text-slate-950 transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Captains Registration</a>
-              <a href="https://forms.gle/QscQvw7xeifqffaL6" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center rounded-xl border border-teal-200 bg-white px-5 py-4 text-center font-bold text-teal-950 transition hover:bg-teal-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Free Agent Form</a>
-            </div>
-            <p className="mt-3 text-sm text-teal-50">Both links open in a new tab.</p>
-          </div>
-        </div>
-      </section>
-
       {/* Schedule / Weekly Themes Section */}
-      <section id="schedule" className="bg-slate-100 py-20 px-4 border-y border-slate-200 scroll-mt-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Season 11 Updates & Schedule</h2>
-            <p className="text-slate-600 mt-2">Check back here for weekly spirit themes, key dates, and game day schedules.</p>
+      <section id="schedule" aria-labelledby="season-11-schedule-title" className="mx-auto mb-14 w-[calc(100%_-_2rem)] max-w-7xl scroll-mt-28 rounded-3xl border border-slate-200 bg-slate-100 px-4 py-8 shadow-sm sm:p-8 lg:p-10">
+        <div className="space-y-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 id="season-11-schedule-title" className="text-3xl font-extrabold text-slate-900 md:text-4xl">Season 11 Updates &amp; Schedule</h2>
+            <p className="mt-2 text-slate-600">Check back here for weekly spirit themes, key dates, and game day schedules.</p>
           </div>
+
+          <section id="season-11-registration" aria-labelledby="season-11-registration-title" className="grid scroll-mt-28 gap-6 rounded-2xl bg-linear-to-br from-teal-900 via-cyan-900 to-slate-900 p-5 text-white shadow-md sm:p-8 lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-10">
+            <div>
+              <h3 id="season-11-registration-title" className="scroll-mt-28 text-2xl font-black tracking-tight sm:text-3xl">Season 11 Registration</h3>
+              <p className="mt-3 max-w-md text-lg text-teal-50">Registration opens November 15, 2026 at 5 PM HST and runs through December 31, 2026.</p>
+              <a href="#season-11-dates" className="mt-4 inline-block font-semibold text-teal-50 underline underline-offset-4 transition hover:text-white">View Season 11 schedule</a>
+            </div>
+            <div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl border border-teal-200 bg-teal-50 p-5">
+                  <p className="text-sm font-bold uppercase tracking-wide text-teal-800">Early Price</p>
+                  <p className="mt-2 text-3xl font-extrabold text-slate-900">$60 <span className="text-base font-semibold">per player</span></p>
+                  <p className="mt-2 text-sm text-slate-700">November 15–30, 2026</p>
+                  <p className="mt-1 text-sm text-slate-600">Opens November 15 at 5 PM HST.</p>
+                </div>
+                <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
+                  <p className="text-sm font-bold uppercase tracking-wide text-violet-800">Regular Price</p>
+                  <p className="mt-2 text-3xl font-extrabold text-slate-900">$75 <span className="text-base font-semibold">per player</span></p>
+                  <p className="mt-2 text-sm text-slate-700">December 1–31, 2026</p>
+                </div>
+              </div>
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <a href="https://teamsideline.com/sites/aikaneohana/program/122491/Hawaii-Gay-Kickball-Season-11" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center rounded-xl bg-amber-300 px-5 py-4 text-center font-bold text-slate-950 transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Captains Registration</a>
+                <a href="https://forms.gle/QscQvw7xeifqffaL6" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center rounded-xl border border-teal-200 bg-white px-5 py-4 text-center font-bold text-teal-950 transition hover:bg-teal-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Free Agent Form</a>
+              </div>
+              <p className="mt-3 text-sm text-teal-50">Both links open in a new tab.</p>
+            </div>
+          </section>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Key Season Dates */}
-            <div className="season-dates bg-white p-6 md:p-8 rounded-2xl shadow-sm">
+            <div id="season-11-dates" className="season-dates scroll-mt-28 bg-white p-6 md:p-8 rounded-2xl shadow-sm">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
                 <CalendarDays className="text-teal-600" /> Key Season Dates
               </h3>
@@ -437,7 +435,7 @@ export default function HawaiiGayKickballShell() {
             </div>
           </div>
 
-          <section id="season-11-sponsorship" aria-labelledby="season-11-sponsorship-title" className="mt-8 scroll-mt-28 sponsorship-feature rounded-3xl border border-white/40 p-6 text-white shadow-xl md:p-10">
+          <section id="season-11-sponsorship" aria-labelledby="season-11-sponsorship-title" className="scroll-mt-28 sponsorship-feature rounded-3xl border border-white/40 p-6 text-white shadow-xl md:p-10">
             <span className="inline-flex rounded-full bg-amber-300 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-slate-900">Community Partnerships</span>
             <h3 id="season-11-sponsorship-title" className="mt-4 text-3xl font-extrabold text-white md:text-4xl">Sponsor Season 11</h3>
             <div className="mt-4 max-w-4xl space-y-4 leading-relaxed text-white/95">
