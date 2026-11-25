@@ -2,9 +2,8 @@ import { ArrowUpRight, Trophy, Medal } from 'lucide-react';
 
 export function TournamentResults() {
   return (
-    <section aria-label="2026 Aloha Kickball Classic congratulations" className="bg-gradient-to-br from-rose-600 via-orange-500 to-amber-400 px-4 py-12 text-white">
-      <div className="mx-auto max-w-7xl">
-      <h3 className="text-3xl font-extrabold">Tournament Results</h3>
+    <section aria-labelledby="classic-results-title" className="mt-6 border-t border-white/25 pt-6">
+      <h3 id="classic-results-title" className="text-2xl font-extrabold">Tournament Results</h3>
       <p className="mt-2 text-white/90">Congratulations to our 2026 Aloha Kickball Classic champions and runners-up! Mahalo to every team for a weekend of pride, play, and ʻohana.</p>
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         <div className="rounded-2xl border border-amber-200/60 bg-slate-950/90 p-6 shadow-xl">
@@ -19,7 +18,6 @@ export function TournamentResults() {
           <h4 className="mt-2 text-3xl font-extrabold text-white">Dirty Bases</h4>
           <p className="mt-2 text-slate-200">Congratulations on an incredible tournament!</p>
         </div>
-      </div>
       </div>
     </section>
   );

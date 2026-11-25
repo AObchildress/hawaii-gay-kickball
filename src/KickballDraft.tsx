@@ -223,7 +223,7 @@ export default function HawaiiGayKickballShell() {
               <a href="#about" className="hover:text-teal-600 transition">About</a>
               <a href="#board" className="hover:text-teal-600 transition">Board</a>
               <a href="#events" className="hover:text-teal-600 transition">Upcoming Events</a>
-              <a href="#schedule" className="hover:text-teal-600 transition">Season 11</a>
+              <a href="#season-11-registration" className="hover:text-teal-600 transition">Season 11</a>
               <a href="#classic" className="hover:text-teal-600 transition">2026 Aloha Kickball Classic</a>
               <a href="#season-11-sponsorship" className="whitespace-nowrap rounded-full bg-amber-300 px-4 py-2 font-bold text-slate-900 transition hover:bg-amber-200">Sponsor Season 11</a>
               <a href="#sponsors" className="hover:text-teal-600 transition">Sponsors</a>
@@ -267,7 +267,7 @@ export default function HawaiiGayKickballShell() {
               Upcoming Events
             </a>
             <a
-              href="#schedule"
+              href="#season-11-registration"
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-slate-700 font-medium"
             >
@@ -332,8 +332,14 @@ export default function HawaiiGayKickballShell() {
           </p>
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
             <a
+              href="#season-11-registration"
+              className="flex items-center justify-center gap-2 rounded-xl bg-amber-300 px-8 py-4 font-extrabold text-slate-950 shadow-lg transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            >
+              <Users className="h-5 w-5" aria-hidden="true" /> Season 11 Registration
+            </a>
+            <a
               href="#events"
-              className="bg-rose-500 hover:bg-rose-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2"
+              className="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-bold px-8 py-4 rounded-xl transition flex items-center justify-center gap-2"
             >
               <Calendar className="w-5 h-5" /> View Upcoming Events
             </a>
@@ -380,6 +386,36 @@ export default function HawaiiGayKickballShell() {
         </div>
       </section>
 
+      <section id="season-11-registration" aria-labelledby="season-11-registration-title" className="scroll-mt-28 px-4 pt-10 sm:pt-14">
+        <div className="mx-auto grid max-w-7xl gap-6 rounded-3xl bg-linear-to-br from-teal-900 via-cyan-900 to-slate-900 p-6 text-white shadow-xl sm:p-8 lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-10 lg:p-10">
+          <div>
+            <h2 id="season-11-registration-title" className="scroll-mt-28 text-3xl font-black tracking-tight sm:text-4xl">Season 11 Registration</h2>
+            <p className="mt-3 max-w-md text-lg text-teal-50">Registration opens November 15, 2026 at 5 PM HST and runs through December 31, 2026.</p>
+            <a href="#schedule" className="mt-4 inline-block font-semibold text-teal-50 underline underline-offset-4 transition hover:text-white">View Season 11 schedule</a>
+          </div>
+          <div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl border border-teal-200 bg-teal-50 p-5">
+                <p className="text-sm font-bold uppercase tracking-wide text-teal-800">Early Price</p>
+                <p className="mt-2 text-3xl font-extrabold text-slate-900">$60 <span className="text-base font-semibold">per player</span></p>
+                <p className="mt-2 text-sm text-slate-700">November 15–30, 2026</p>
+                <p className="mt-1 text-sm text-slate-600">Opens November 15 at 5 PM HST.</p>
+              </div>
+              <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
+                <p className="text-sm font-bold uppercase tracking-wide text-violet-800">Regular Price</p>
+                <p className="mt-2 text-3xl font-extrabold text-slate-900">$75 <span className="text-base font-semibold">per player</span></p>
+                <p className="mt-2 text-sm text-slate-700">December 1–31, 2026</p>
+              </div>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              <a href="https://teamsideline.com/sites/aikaneohana/program/122491/Hawaii-Gay-Kickball-Season-11" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center rounded-xl bg-amber-300 px-5 py-4 text-center font-bold text-slate-950 transition hover:bg-amber-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Captains Registration</a>
+              <a href="https://forms.gle/QscQvw7xeifqffaL6" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center rounded-xl border border-teal-200 bg-white px-5 py-4 text-center font-bold text-teal-950 transition hover:bg-teal-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Free Agent Form</a>
+            </div>
+            <p className="mt-3 text-sm text-teal-50">Both links open in a new tab.</p>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-20 px-4 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -392,8 +428,6 @@ export default function HawaiiGayKickballShell() {
 
       </section>
 
-      <TournamentResults />
-
       {/* Schedule / Weekly Themes Section */}
       <section id="schedule" className="bg-slate-100 py-20 px-4 border-y border-slate-200 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
@@ -401,29 +435,6 @@ export default function HawaiiGayKickballShell() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">Season 11 Updates & Schedule</h2>
             <p className="text-slate-600 mt-2">Check back here for weekly spirit themes, key dates, and game day schedules.</p>
           </div>
-
-          <section aria-labelledby="season-11-registration-title" className="mb-8 rounded-2xl border border-teal-200 border-t-4 border-t-teal-500 bg-white p-6 shadow-sm md:p-8">
-            <h3 id="season-11-registration-title" className="flex items-center gap-3 text-2xl font-bold text-slate-900"><Users className="h-6 w-6 text-teal-600" aria-hidden="true" /> Season 11 Registration</h3>
-            <p className="mt-3 text-slate-600">Registration opens November 15, 2026 at 5 PM HST and runs through December 31, 2026.</p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-teal-200 bg-teal-50 p-5">
-                <p className="text-sm font-bold uppercase tracking-wide text-teal-800">Early Price</p>
-                <p className="mt-2 text-3xl font-extrabold text-slate-900">$60 <span className="text-base font-semibold">per player</span></p>
-                <p className="mt-2 text-sm text-slate-700">November 15–30, 2026</p>
-                <p className="mt-1 text-xs text-slate-600">Opens November 15 at 5 PM HST.</p>
-              </div>
-              <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
-                <p className="text-sm font-bold uppercase tracking-wide text-violet-800">Regular Price</p>
-                <p className="mt-2 text-3xl font-extrabold text-slate-900">$75 <span className="text-base font-semibold">per player</span></p>
-                <p className="mt-2 text-sm text-slate-700">December 1–31, 2026</p>
-              </div>
-            </div>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <a href="https://teamsideline.com/sites/aikaneohana/program/122491/Hawaii-Gay-Kickball-Season-11" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-4 font-bold text-white transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">Captains Registration <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
-              <a href="https://forms.gle/QscQvw7xeifqffaL6" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-5 py-4 font-bold text-violet-900 transition hover:bg-violet-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-700">Free Agent Form <ArrowRight className="h-5 w-5" aria-hidden="true" /></a>
-            </div>
-            <p className="mt-3 text-xs text-slate-500">Both links open in a new tab.</p>
-          </section>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Key Season Dates */}
@@ -498,12 +509,13 @@ export default function HawaiiGayKickballShell() {
       </section>
 
       {/* 2026 Aloha Kickball Classic */}
-      <section id="classic" className="bg-gradient-to-br from-rose-600 via-orange-500 to-amber-400 px-4 py-10 text-white scroll-mt-24">
+      <section id="classic" aria-labelledby="classic-title" className="bg-gradient-to-br from-rose-800 via-orange-800 to-amber-800 px-4 py-10 text-white scroll-mt-24">
         <div className="mx-auto max-w-7xl">
           <p className="text-xs font-bold uppercase tracking-widest text-white/80">Tournament Recap</p>
-          <h2 className="mt-2 text-2xl font-black md:text-3xl">2026 Aloha Kickball Classic</h2>
+          <h2 id="classic-title" className="mt-2 text-2xl font-black md:text-3xl">2026 Aloha Kickball Classic</h2>
           <p className="mt-2 font-semibold">November 13–15, 2026 · Kona, Hawaiʻi Island</p>
           <p className="mt-2 text-sm text-white/90">Mahalo for a wonderful weekend of kickball, community, and aloha! Host hotel: Pacific 19.</p>
+          <TournamentResults />
         </div>
         <details className="mx-auto mt-4 max-w-7xl rounded-xl border border-white/30 bg-slate-950/85 p-4">
                 <summary className="cursor-pointer font-bold">Weekend Schedule · View Details</summary>
