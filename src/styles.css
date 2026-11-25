@@ -57,17 +57,11 @@ textarea {
 .season-dates li:nth-child(6n + 5) { --date-accent: #d59322; --date-tint: #fff8e7; --date-ink: #875b09; }
 .season-dates li:nth-child(6n + 6) { --date-accent: #4d9c65; --date-tint: #f0f9ee; --date-ink: #326e44; }
 
-.season-dates li .bg-teal-100 {
+.season-date {
   background: white;
   color: var(--date-ink);
   border: 1px solid color-mix(in srgb, var(--date-accent) 25%, transparent);
 }
-
-.island-site .spirit-card {
-  background: linear-gradient(145deg, #087d80, #12648c 55%, #6c438e);
-}
-
-.spirit-card .text-slate-300 { color: #edf5ff; }
 
 .island-site #committees {
   background: linear-gradient(145deg, #fffaf2, #fff 55%, #fdf0f3);

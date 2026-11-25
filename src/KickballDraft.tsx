@@ -9,7 +9,6 @@ import {
   Mail,
   MapPin,
   Menu,
-  Shirt,
   Sparkles,
   Users,
   X,
@@ -350,12 +349,12 @@ export default function HawaiiGayKickballShell() {
         </div>
       </section>
 
-      {/* Schedule / Weekly Themes Section */}
+      {/* Season 11 Updates & Schedule */}
       <section id="schedule" aria-labelledby="season-11-schedule-title" className="mx-auto mb-14 w-[calc(100%_-_2rem)] max-w-7xl scroll-mt-28 rounded-3xl border border-slate-200 bg-slate-100 px-4 py-8 shadow-sm sm:p-8 lg:p-10">
         <div className="space-y-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 id="season-11-schedule-title" className="text-3xl font-extrabold text-slate-900 md:text-4xl">Season 11 Updates &amp; Schedule</h2>
-            <p className="mt-2 text-slate-600">Check back here for weekly spirit themes, key dates, and game day schedules.</p>
+            <p className="mt-2 text-slate-600">Check back here for game day schedules and season updates.</p>
           </div>
 
           <section id="season-11-registration" aria-labelledby="season-11-registration-title" className="grid scroll-mt-28 gap-6 rounded-2xl bg-linear-to-br from-teal-900 via-cyan-900 to-slate-900 p-5 text-white shadow-md sm:p-8 lg:grid-cols-[2fr_3fr] lg:items-center lg:gap-10">
@@ -386,54 +385,32 @@ export default function HawaiiGayKickballShell() {
             </div>
           </section>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Key Season Dates */}
-            <div id="season-11-dates" className="season-dates scroll-mt-28 bg-white p-6 md:p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
-                <CalendarDays className="text-teal-600" /> Key Season Dates
-              </h3>
-              <p className="mb-4 text-sm text-slate-600">All times Hawaiʻi Standard Time (HST).</p>
-              <ul className="space-y-3">
-                {[
-                  { title: 'Registration', date: 'Nov. 15–Dec. 31, 2026', detail: 'Opens November 15 at 5:00 PM; runs through December 31.' },
-                  { title: 'Clinics', dates: ['Dec. 5, 2026', 'Jan. 9, 2027', 'Jan. 16, 2027', 'Jan. 23, 2027', 'Jan. 30, 2027'], detail: 'All clinics: 9:00 AM–12:00 PM · Softball Fields 2 & 3' },
-                  { title: 'Season 11 Opening Party', date: 'Feb. 6, 2027' },
-                  { title: 'Regular Season Games', date: 'Feb. 20–Apr. 10, 2027' },
-                  { title: 'Playoffs', date: 'Apr. 17, 2027' },
-                  { title: 'Rain Delay Backup Weekends', date: 'Apr. 24 & May 1, 2027' },
-                ].map((item) => (
-                  <li
-                    key={item.title}
-                    className="rounded-lg border border-slate-100 bg-slate-50 px-4 py-3"
-                  >
-                    <div className={`flex flex-col items-start justify-between gap-2 ${item.dates ? '' : 'lg:flex-row'}`}>
-                      <span className="font-semibold text-slate-800">{item.title}</span>
-                      <div className="flex flex-wrap gap-2">
-                        {(item.dates ?? [item.date]).map((date) => (
-                          <span key={date} className="rounded-xl bg-teal-100 px-3 py-1 text-sm font-bold text-teal-800 lg:text-right">{date}</span>
-                        ))}
-                      </div>
-                    </div>
-                    {item.detail && <p className="mt-2 text-sm text-slate-600">{item.detail}</p>}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Spirit Themes */}
-            <div className="spirit-card bg-gradient-to-br from-teal-700 to-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-md">
-              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                <Shirt className="text-rose-400" /> Spirit & Dress Themes
-              </h3>
-              <p className="text-slate-300 text-sm mb-6">
-                Season 11 spirit and dress themes are being planned.
-              </p>
-              <div className="rounded-xl border border-dashed border-white/30 bg-white/10 p-8 text-center backdrop-blur">
-                <p className="text-3xl font-black tracking-[0.18em] text-amber-300">TBA</p>
-                <p className="mt-3 text-sm font-medium text-slate-300">Weekly themes will be announced soon.</p>
-              </div>
-            </div>
-          </div>
+          <section id="season-11-dates" aria-labelledby="season-11-dates-title" className="season-dates scroll-mt-28 rounded-2xl bg-white p-4 sm:p-6 md:p-8">
+            <h3 id="season-11-dates-title" className="flex items-center gap-3 text-2xl font-bold text-slate-900 md:text-3xl">
+              <CalendarDays className="shrink-0 text-teal-600" aria-hidden="true" /> Key Season Dates
+            </h3>
+            <p className="mt-2 text-sm text-slate-600">All times Hawaiʻi Standard Time (HST).</p>
+            <ul className="mt-5 grid gap-4 md:grid-cols-2">
+              {[
+                { title: 'Registration', date: 'Nov. 15–Dec. 31, 2026', detail: 'Opens November 15 at 5:00 PM; runs through December 31.' },
+                { title: 'Clinics', dates: ['Dec. 5, 2026', 'Jan. 9, 2027', 'Jan. 16, 2027', 'Jan. 23, 2027', 'Jan. 30, 2027'], detail: 'All clinics: 9:00 AM–12:00 PM · Softball Fields 2 & 3' },
+                { title: 'Season 11 Opening Party', date: 'Feb. 6, 2027' },
+                { title: 'Regular Season Games', date: 'Feb. 20–Apr. 10, 2027' },
+                { title: 'Playoffs', date: 'Apr. 17, 2027' },
+                { title: 'Rain Delay Backup Weekends', date: 'Apr. 24 & May 1, 2027' },
+              ].map((item) => (
+                <li key={item.title} className="rounded-xl border border-slate-200 p-4 sm:p-5">
+                  <h4 className="text-lg font-bold leading-snug text-slate-900">{item.title}</h4>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {(item.dates ?? [item.date]).map((date) => (
+                      <span key={date} className="season-date rounded-lg px-3 py-1.5 text-base font-extrabold sm:text-lg">{date}</span>
+                    ))}
+                  </div>
+                  {item.detail && <p className="mt-3 text-sm text-slate-700">{item.detail}</p>}
+                </li>
+              ))}
+            </ul>
+          </section>
 
           <section id="season-11-sponsorship" aria-labelledby="season-11-sponsorship-title" className="scroll-mt-28 sponsorship-feature rounded-3xl border border-white/40 p-6 text-white shadow-xl md:p-10">
             <span className="inline-flex rounded-full bg-amber-300 px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-slate-900">Community Partnerships</span>
